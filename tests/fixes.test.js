@@ -134,3 +134,15 @@ test('#3 athlete page hides round and opponent before reveal', () => {
   assert.doesNotMatch(html, /Final/);
   assert.doesNotMatch(html, /Bia Two/);
 });
+
+test('mixed format is valid and shows under both filters', () => {
+  const d = { meta: { lastRun: 'x', ok: true }, channels: [], teams: [], videos: [], matches: [], athletes: [],
+    events: [{ id: 'e', name: 'BJJ Stars 20', org: 'BJJ Stars', format: 'mixed', aliases: [], start: '2027-01-01', end: '2027-01-01', status: 'upcoming', streaming: 'flo', sourceUrl: 'https://s', bracketUrl: null, podiums: [], superfights: [] }] };
+  assert.deepEqual(validate(d), []);
+  const s = { data: { ...d, events: d.events }, videos: [], stars: { events: [], athletes: [], teams: [] }, revealed: new Set(), ui: { format: 'gi', when: 'upcoming' }, now: new Date('2026-11-06T00:00:00Z') };
+  assert.match(screens.calendar(s), /BJJ Stars 20/);
+  s.ui.format = 'nogi';
+  const html = screens.calendar(s);
+  assert.match(html, /BJJ Stars 20/);
+  assert.match(html, /Gi &amp; No-Gi|Gi & No-Gi/);
+});

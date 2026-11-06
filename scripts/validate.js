@@ -51,7 +51,7 @@ export function validate(d) {
     const w = `event ${e.id}`;
     url(e.sourceUrl, `${w} sourceUrl`); url(e.bracketUrl, `${w} bracketUrl`); url(e.resultsSourceUrl, `${w} resultsSourceUrl`);
     need(e, ['id', 'name', 'org', 'format', 'start', 'end', 'status', 'streaming', 'sourceUrl'], w);
-    if (e.format && !['gi', 'nogi'].includes(e.format)) err(`${w}: format must be gi|nogi`);
+    if (e.format && !['gi', 'nogi', 'mixed'].includes(e.format)) err(`${w}: format must be gi|nogi|mixed`);
     if (!['upcoming', 'live', 'done'].includes(e.status)) err(`${w}: bad status ${e.status}`);
     if (!['flo', 'free_youtube', 'other'].includes(e.streaming)) err(`${w}: bad streaming ${e.streaming}`);
     if (!DATE.test(e.start ?? '') || !DATE.test(e.end ?? '')) err(`${w}: bad dates`);

@@ -42,7 +42,7 @@ export function home(s) {
 export function calendar(s) {
   const f = s.ui.format; const when = s.ui.when;
   const today = s.now.toISOString().slice(0, 10);
-  let list = s.data.events.filter((e) => f === 'all' || e.format === f);
+  let list = s.data.events.filter((e) => f === 'all' || e.format === f || e.format === 'mixed');
   list = when === 'upcoming' ? list.filter((e) => e.end >= today) : list.filter((e) => e.end < today).reverse();
   const pressed = (k, v) => `aria-pressed="${s.ui[k] === v}"`;
   return `<h1>Calendar</h1>

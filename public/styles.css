@@ -59,6 +59,7 @@ h3 { font: 600 16px/1.3 var(--body); margin: 0; }
 }
 .event .edge { background: var(--gi); }
 .event.nogi .edge { background: var(--nogi); }
+.event.mixed .edge { background: linear-gradient(var(--gi) 50%, var(--nogi) 50%); }
 .event .body { padding: 12px 14px; min-width: 0; }
 .event .meta { font-size: 14px; color: var(--ink-2); margin-top: 2px; }
 .event .tip { display: flex; align-items: center; gap: 3px; padding: 0 10px; background: var(--belt); min-width: 64px; justify-content: center; }

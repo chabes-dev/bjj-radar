@@ -24,6 +24,7 @@ export function ago(iso, now = Date.now()) {
 }
 
 export function formatBadge(e) {
+  if (e.format === 'mixed') return '<span class="badge gi">Gi &amp; No-Gi</span>';
   return e.format === 'gi' ? '<span class="badge gi">Gi</span>' : '<span class="badge nogi">No-Gi</span>';
 }
 export function streamBadge(e) {

@@ -14,7 +14,7 @@ of followed-roster athletes (athletes in `athletes.json`).
 
 ## Steps
 1. Events: use web search to add newly announced events and fix dates, locations, and
-   `streaming` (flo | free_youtube | other). Set `status` from today's date. Every event
+   `streaming` (flo | free_youtube | other). `format` is gi, nogi, or mixed (cards with both, e.g. BJJ Stars). Set `status` from today's date. Every event
    needs an https `sourceUrl` that points to the original article, not an aggregator.
 2. Results: for events that finished since `meta.lastRun`, add `podiums`, `superfights`,
    and a `matches` entry for each final (gold vs silver, winner "a", method if known).
