@@ -4,7 +4,7 @@ import { matchVideo } from './lib/match.js';
 import { safeTitle } from './lib/safeTitle.js';
 import { ago } from './ui/components.js';
 import { rotateVisit } from './lib/visit.js';
-import { mergeVideos as merge } from './lib/videos.js';
+import { mergeVideos as merge, backfillTargets } from './lib/videos.js';
 import * as screens from './ui/screens.js';
 
 const FILES = ['events', 'athletes', 'teams', 'videos', 'matches', 'channels', 'meta'];
@@ -52,31 +52,63 @@ function baseStatus() {
   return parts.join('. ') + '.';
 }
 
+const LOOKBACK_DAYS = 60;
+
+function toVideo(v, r, addedAt) {
+  return { youtubeId: v.youtubeId, rawTitle: v.title, safeTitle: safeTitle(v.title), channelId: v.channelId, publishedAt: v.publishedAt, addedAt, eventId: r.eventId, athleteIds: r.athleteIds, match: r.status };
+}
+
 async function refresh() {
   const btn = $('refresh');
   if (btn.getAttribute('aria-busy') === 'true') return;
   btn.setAttribute('aria-busy', 'true');
   setStatus('Checking YouTube…');
+  const ctx = { channels: state.data.channels, events: state.data.events, athletes: state.data.athletes, matches: state.data.matches };
+  const lastRun = state.data.meta.lastRun;
+  const prev = store.get('refreshCache', null);
+  const found = new Map((prev?.since === lastRun ? prev.videos : []).map((v) => [v.youtubeId, v]));
+  const before = [...found.values()].filter((v) => v.match === 'confirmed').length;
+  let checkedAt = new Date().toISOString();
+  let failed = null;
   try {
-    const since = state.data.meta.lastRun;
+    // 1. Recent uploads from the whitelisted channels.
+    const since = new Date(Date.now() - LOOKBACK_DAYS * 86400000).toISOString();
     const res = await fetch(`/api/refresh?since=${encodeURIComponent(since)}`);
     if (!res.ok) throw new Error((await res.json().catch(() => ({}))).error ?? 'upstream');
     const body = await res.json();
-    const ctx = { channels: state.data.channels, events: state.data.events, athletes: state.data.athletes, matches: state.data.matches };
-    const found = body.videos
-      .map((v) => ({ v, r: matchVideo(v, ctx) }))
-      .filter(({ r }) => r.status !== 'none')
-      .map(({ v, r }) => ({ youtubeId: v.youtubeId, rawTitle: v.title, safeTitle: safeTitle(v.title), channelId: v.channelId, publishedAt: v.publishedAt, addedAt: body.checkedAt, eventId: r.eventId, athleteIds: r.athleteIds, match: r.status }));
-    store.set('refreshCache', { checkedAt: body.checkedAt, since, videos: found });
-    mergeVideos();
-    render();
-    const n = found.filter((v) => v.match === 'confirmed').length;
-    setStatus(n ? `Found ${n} new full ${n === 1 ? 'match' : 'matches'} since Monday.` : 'Nothing new on YouTube since Monday.');
+    checkedAt = body.checkedAt;
+    for (const v of body.videos) {
+      const r = matchVideo(v, ctx);
+      if (r.status !== 'none' && !found.has(v.youtubeId)) found.set(v.youtubeId, toVideo(v, r, checkedAt));
+    }
+    // 2. Past events still empty: search YouTube for each (cached a week on the server).
+    const targets = backfillTargets(state.data.events, [...state.data.videos, ...found.values()], new Date());
+    for (const [i, e] of targets.entries()) {
+      setStatus(`Searching past events on YouTube… ${i + 1}/${targets.length}`);
+      const r2 = await fetch(`/api/event-videos?id=${encodeURIComponent(e.id)}`);
+      if (r2.status === 429) { failed = 'quota'; break; }
+      if (!r2.ok) continue;
+      for (const v of (await r2.json()).videos) {
+        if (found.has(v.youtubeId)) continue;
+        const r = matchVideo(v, ctx);
+        if (r.status === 'none') continue;
+        if (!r.eventId) r.eventId = e.id;
+        found.set(v.youtubeId, toVideo(v, r, checkedAt));
+      }
+    }
   } catch (err) {
-    const why = err.message === 'no_key' ? ' (the YouTube key isn’t set up yet)' : err.message === 'quota' ? ' (YouTube’s daily limit is used up; try tomorrow)' : '';
-    setStatus(`Couldn't check YouTube, showing Monday's data${why}.`);
-  } finally {
-    btn.setAttribute('aria-busy', 'false');
+    failed = err.message;
+  }
+  store.set('refreshCache', { checkedAt, since: lastRun, videos: [...found.values()] });
+  mergeVideos();
+  render();
+  btn.setAttribute('aria-busy', 'false');
+  const n = [...found.values()].filter((v) => v.match === 'confirmed').length - before;
+  if (failed && !n) {
+    const why = failed === 'no_key' ? ' (the YouTube key isn’t set up yet)' : failed === 'quota' ? ' (YouTube’s daily limit is used up; try tomorrow)' : '';
+    setStatus(`Couldn't check YouTube, showing what's saved${why}.`);
+  } else {
+    setStatus(n ? `Found ${n} free full ${n === 1 ? 'match' : 'matches'}.` : 'No new free full matches.');
   }
 }
 

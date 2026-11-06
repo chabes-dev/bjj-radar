@@ -1,0 +1,37 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:ital,wght@1,800&family=Archivo:wght@400;600&family=Oswald:wght@600&family=Inter+Tight:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;display:flex;gap:24px;padding:20px;background:#ddd;font-family:Archivo}
+.ph{width:360px;background:#fff;border-radius:22px;overflow:hidden}
+.top{display:flex;justify-content:space-between;align-items:center;padding:16px 18px}
+.row{display:grid;grid-template-columns:1fr auto;margin:0 16px 10px;border-radius:6px;overflow:hidden}
+.b{padding:12px 14px}.b h3{margin:0;font-size:16px}.m{font-size:13px;margin-top:3px}
+.chip{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;margin-right:5px;border-radius:3px}
+.tab{display:flex;justify-content:space-around;padding:14px 0;font-weight:600;font-size:14px}
+/* A: Fight Night */
+.A{color:#111}.A .brand{font:800 italic 30px/1 'Saira Condensed';letter-spacing:.01em}.A .brand span{color:#D20A0A}
+.A h1{font:800 italic 40px/1 'Saira Condensed';margin:6px 18px 12px;text-transform:none}
+.A .row{border:1.5px solid #111}.A .tip{background:#111;color:#fff;display:flex;align-items:center;gap:3px;padding:0 12px;font:800 italic 15px 'Saira Condensed'}
+.A .tip.free{background:#D20A0A}.A .tip i{width:5px;height:22px;background:#fff;display:block;transform:skewX(-12deg)}
+.A .gi{border:1.5px solid #111}.A .nogi{background:#111;color:#fff}.A .free{color:#fff}.A .fy{background:#FDECEC;color:#B00808}
+.A .m{color:#555}.A .tab{border-top:3px solid #111}.A .on{color:#D20A0A}
+/* B: Corner Colours */
+.B{color:#0B1F3A}.B .brand{font:600 26px/1 Oswald;text-transform:uppercase;letter-spacing:.04em}
+.B h1{font:600 34px/1 Oswald;margin:6px 18px 12px;text-transform:uppercase}
+.B .row{border:1px solid #DCE3EE;border-left:6px solid #0B3C8C}.B .row.n{border-left-color:#C8102E}
+.B .tip{display:flex;align-items:center;padding:0 12px;font:600 15px Oswald;color:#C8102E}
+.B .gi{background:#E6EDF8;color:#0B3C8C}.B .nogi{background:#FBE7EA;color:#A30D26}.B .fy{background:#E7F5EC;color:#1A7F43}
+.B .m{color:#4A5A72}.B .tab{border-top:1px solid #DCE3EE}.B .on{color:#C8102E}
+.lbl{font:600 14px Archivo;margin:10px 18px;color:#333}
+</style></head><body>
+<div class="ph A"><div class="top"><div class="brand">BJJ <span>RADAR</span></div></div><h1>Calendar</h1>
+<div class="row"><div class="b"><h3>ADCC World Championship 2026</h3><div class="m">Sep 12–13, Kraków</div><div class="m"><span class="chip nogi">No-Gi</span><span class="chip fy">9 free full matches</span></div></div><div class="tip free"><i></i><i></i><i></i><i></i></div></div>
+<div class="row"><div class="b"><h3>IBJJF Worlds 2026</h3><div class="m">May 28–31, Long Beach</div><div class="m"><span class="chip gi">Gi</span><span class="chip fy">3 free full matches</span></div></div><div class="tip free"><i></i><i></i><i></i></div></div>
+<div class="row"><div class="b"><h3>IBJJF The Crown 2026</h3><div class="m">Nov 8, Long Beach</div><div class="m"><span class="chip gi">Gi</span>Upcoming</div></div><div class="tip">NOV 8</div></div>
+<div class="tab"><span class="on">Catch up</span><span>Calendar</span><span>Following</span></div><div class="lbl">A · Fight Night</div></div>
+<div class="ph B"><div class="top"><div class="brand">BJJ Radar</div></div><h1>Calendar</h1>
+<div class="row n"><div class="b"><h3>ADCC World Championship 2026</h3><div class="m">Sep 12–13, Kraków</div><div class="m"><span class="chip nogi">No-Gi</span><span class="chip fy">9 free full matches</span></div></div><div class="tip">9 ▶</div></div>
+<div class="row"><div class="b"><h3>IBJJF Worlds 2026</h3><div class="m">May 28–31, Long Beach</div><div class="m"><span class="chip gi">Gi</span><span class="chip fy">3 free full matches</span></div></div><div class="tip">3 ▶</div></div>
+<div class="row"><div class="b"><h3>IBJJF The Crown 2026</h3><div class="m">Nov 8, Long Beach</div><div class="m"><span class="chip gi">Gi</span>Upcoming</div></div><div class="tip">NOV 8</div></div>
+<div class="tab"><span class="on">Catch up</span><span>Calendar</span><span>Following</span></div><div class="lbl">B · Corner Colours</div></div>
+</body></html>

@@ -146,3 +146,14 @@ test('mixed format is valid and shows under both filters', () => {
   assert.match(html, /BJJ Stars 20/);
   assert.match(html, /Gi &amp; No-Gi|Gi & No-Gi/);
 });
+
+import { backfillTargets } from '../public/js/lib/videos.js';
+test('backfill targets: finished events in the last year with no confirmed videos', () => {
+  const now = new Date('2026-11-06T00:00:00Z');
+  const events = [
+    { id: 'old', end: '2025-06-01' }, { id: 'done-empty', end: '2026-05-31' },
+    { id: 'done-has', end: '2026-09-13' }, { id: 'future', end: '2026-12-12' },
+  ];
+  const videos = [{ eventId: 'done-has', match: 'confirmed' }, { eventId: 'done-empty', match: 'maybe' }];
+  assert.deepEqual(backfillTargets(events, videos, now).map((e) => e.id), ['done-empty']);
+});
