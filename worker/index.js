@@ -122,11 +122,26 @@ async function eventVideos(request, env) {
   }
 }
 
+// Diagnostic: does each @handle exist on YouTube? (1 quota unit each, max 15)
+async function checkHandles(request, env) {
+  if (!env.YT_API_KEY) return json({ error: 'no_key' }, 503);
+  const fetchImpl = env.fetchImpl ?? fetch;
+  const handles = (new URL(request.url).searchParams.get('h') ?? '').split(',').map((h) => h.trim()).filter(Boolean).slice(0, 15);
+  const out = [];
+  for (const handle of handles) {
+    const res = await fetchImpl(`${CHANNELS_API}?part=snippet&forHandle=${encodeURIComponent(handle)}&key=${encodeURIComponent(env.YT_API_KEY)}`);
+    const item = res.ok ? (await res.json())?.items?.[0] : null;
+    out.push(item ? { handle, found: true, title: item.snippet?.title, channelId: item.id } : { handle, found: false });
+  }
+  return json(out);
+}
+
 export default {
   async fetch(request, env) {
     const { pathname } = new URL(request.url);
     if (pathname === '/api/refresh') return refresh(request, env);
     if (pathname === '/api/event-videos') return eventVideos(request, env);
+    if (pathname === '/api/check-handles') return checkHandles(request, env);
     return env.ASSETS.fetch(request);
   },
 };

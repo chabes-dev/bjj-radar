@@ -62,3 +62,9 @@ test('event-videos: cache resets when the channel list changes', async () => {
   assert.equal(searches, 2);
   assert.equal(body.cached, false);
 });
+
+test('check-handles: reports which handles exist on YouTube', async () => {
+  const f = async (u) => String(u).includes('forHandle=%40good') ? json({ items: [{ id: 'UC1', snippet: { title: 'Good Channel' } }] }) : json({ items: [] });
+  const res = await worker.fetch(new Request('https://x.dev/api/check-handles?h=@good,@bad'), { ASSETS, YT_API_KEY: 'k', fetchImpl: f });
+  assert.deepEqual(await res.json(), [{ handle: '@good', found: true, title: 'Good Channel', channelId: 'UC1' }, { handle: '@bad', found: false }]);
+});
