@@ -53,3 +53,12 @@ test('event-videos: quota → 429', async () => {
   const q = async () => json({ error: { errors: [{ reason: 'quotaExceeded' }] } }, 403);
   assert.equal((await worker.fetch(req(), { ASSETS, YT_API_KEY: 'k', fetchImpl: q, CACHE: kv() })).status, 429);
 });
+
+test('event-videos: cache resets when the channel list changes', async () => {
+  const c = kv(); searches = 0;
+  await worker.fetch(req(), { ASSETS, YT_API_KEY: 'k', fetchImpl: yt, CACHE: c });
+  files['/data/channels.json'] = [{ id: 'flo', name: 'FloGrappling', handle: '@FloGrappling' }, { id: 'bjjstars', name: 'BJJ Stars', handle: '@bjjstarsoficial' }];
+  const body = await (await worker.fetch(req(), { ASSETS, YT_API_KEY: 'k', fetchImpl: yt, CACHE: c })).json();
+  assert.equal(searches, 2);
+  assert.equal(body.cached, false);
+});

@@ -92,7 +92,9 @@ async function eventVideos(request, env) {
   const event = events.find((e) => e.id === id);
   if (!event) return json({ error: 'unknown_event' }, 404);
 
-  const cacheKey = `ev:${id}`;
+  const channels = await readAsset(env, url, '/data/channels.json');
+  // The key includes the channel list, so fixing a channel invalidates old results.
+  const cacheKey = `ev:${id}:${channels.map((c) => c.handle ?? c.id).sort().join(',')}`;
   const cached = await env.CACHE?.get(cacheKey);
   if (cached) {
     const c = JSON.parse(cached);
@@ -100,7 +102,6 @@ async function eventVideos(request, env) {
   }
   const fetchImpl = env.fetchImpl ?? fetch;
   try {
-    const channels = await readAsset(env, url, '/data/channels.json');
     const ids = new Map();
     for (const c of channels) {
       try { const yid = await channelId(c, env, fetchImpl); if (yid) ids.set(yid, c.id); }
