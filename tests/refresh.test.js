@@ -32,6 +32,12 @@ test('quotaExceeded → 429 quota', async () => {
   assert.deepEqual(await res.json(), { error: 'quota' });
 });
 
+test('quota during handle resolution → 429', async () => {
+  const a = { fetch: async () => json([{ id: 'flo', name: 'Flo', handle: '@FloGrappling' }]) };
+  const yt = async () => json({ error: { errors: [{ reason: 'quotaExceeded' }] } }, 403);
+  assert.equal((await worker.fetch(req(), { ASSETS: a, YT_API_KEY: 'k', fetchImpl: yt })).status, 429);
+});
+
 test('upstream failure → 502', async () => {
   const yt = async () => json({}, 500);
   const res = await worker.fetch(req(), { ASSETS: assets, YT_API_KEY: 'k', fetchImpl: yt });
@@ -45,6 +51,24 @@ test('success returns checkedAt and videos', async () => {
   assert.equal(res.status, 200);
   assert.ok(body.checkedAt);
   assert.equal(body.videos[0].youtubeId, 'new');
+});
+
+test('channel without playlist id is resolved by handle and tagged with our id', async () => {
+  const assets2 = { fetch: async () => json([{ id: 'flo', name: 'Flo', handle: '@FloGrappling' }]) };
+  const yt = async (u) => String(u).includes('/channels?')
+    ? json({ items: [{ contentDetails: { relatedPlaylists: { uploads: 'UU_RESOLVED' } } }] })
+    : (String(u).includes('UU_RESOLVED') ? json({ items: [item('v1', '2026-11-04T00:00:00Z')] }) : json({}, 404));
+  const body = await (await worker.fetch(req(), { ASSETS: assets2, YT_API_KEY: 'k', fetchImpl: yt })).json();
+  assert.equal(body.videos[0].youtubeId, 'v1');
+  assert.equal(body.videos[0].channelId, 'flo');
+});
+
+test('unknown handle is skipped, others still returned', async () => {
+  const assets3 = { fetch: async () => json([{ id: 'bad', name: 'X', handle: '@nope' }, { id: 'flo', name: 'Flo', uploadsPlaylistId: 'UU_FLO' }]) };
+  const yt = async (u) => String(u).includes('/channels?') ? json({ items: [] }) : json({ items: [item('v2', '2026-11-04T00:00:00Z')] });
+  const res = await worker.fetch(req(), { ASSETS: assets3, YT_API_KEY: 'k', fetchImpl: yt });
+  assert.equal(res.status, 200);
+  assert.equal((await res.json()).videos.length, 1);
 });
 
 test('non-api paths go to static assets', async () => {

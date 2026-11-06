@@ -2,5 +2,11 @@
   "name": "bjj-radar",
   "private": true,
   "type": "module",
-  "scripts": { "test": "node --test", "validate": "node scripts/validate.js" }
+  "scripts": {
+    "test": "node --test",
+    "validate": "node scripts/validate.js"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2"
+  }
 }

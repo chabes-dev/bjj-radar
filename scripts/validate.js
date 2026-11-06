@@ -22,7 +22,10 @@ export function validate(d) {
   need(d.meta, ['lastRun', 'ok'], 'meta');
 
   const channelIds = ids(d.channels, 'id', 'channels');
-  d.channels.forEach((c) => need(c, ['id', 'name', 'uploadsPlaylistId'], `channel ${c.id}`));
+  d.channels.forEach((c) => {
+    need(c, ['id', 'name'], `channel ${c.id}`);
+    if (!c.handle && !c.uploadsPlaylistId) err(`channel ${c.id}: needs handle or uploadsPlaylistId`);
+  });
 
   const athleteIds = ids(d.athletes, 'id', 'athletes');
   const teamIds = ids(d.teams, 'id', 'teams');

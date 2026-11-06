@@ -38,6 +38,12 @@ test('bad video match value errors', () => {
   const d = base(); d.videos[0].match = 'probably';
   assert.ok(validate(d).some((e) => e.includes('match')));
 });
+test('channel needs handle or uploadsPlaylistId', () => {
+  const d = base(); delete d.channels[0].uploadsPlaylistId;
+  assert.ok(validate(d).some((e) => e.includes('handle')));
+  d.channels[0].handle = '@FloGrappling';
+  assert.deepEqual(validate(d), []);
+});
 test('duplicate ids error', () => {
   const d = base(); d.athletes[1].id = 'a1';
   assert.ok(validate(d).some((e) => e.includes('duplicate')));
