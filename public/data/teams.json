@@ -1,1 +1,95 @@
-[]
+[
+ {
+  "id": "aoj",
+  "name": "Art of Jiu Jitsu",
+  "aliases": [
+   "AOJ"
+  ],
+  "athleteIds": [
+   "diego-pato",
+   "cole-abate",
+   "tainan-dalpra",
+   "mayssa-bastos",
+   "ashlee-funegra"
+  ]
+ },
+ {
+  "id": "atos",
+  "name": "Atos",
+  "aliases": [],
+  "athleteIds": [
+   "nicholas-maglicic",
+   "lillian-marchand",
+   "marlon-tajik"
+  ]
+ },
+ {
+  "id": "checkmat",
+  "name": "Checkmat",
+  "aliases": [
+   "CheckMat"
+  ],
+  "athleteIds": [
+   "matheus-gabriel",
+   "jansen-gomes"
+  ]
+ },
+ {
+  "id": "alliance",
+  "name": "Alliance",
+  "aliases": [],
+  "athleteIds": [
+   "jalen-fonacier",
+   "janaina-lebre"
+  ]
+ },
+ {
+  "id": "soldiers",
+  "name": "Soldiers JJ",
+  "aliases": [
+   "Soldiers"
+  ],
+  "athleteIds": [
+   "erich-munis",
+   "vinicius-liberati"
+  ]
+ },
+ {
+  "id": "infight",
+  "name": "InFight JJ",
+  "aliases": [
+   "Infight"
+  ],
+  "athleteIds": [
+   "gabi-pessanha"
+  ]
+ },
+ {
+  "id": "newwave",
+  "name": "New Wave",
+  "aliases": [
+   "New Wave Jiu Jitsu"
+  ],
+  "athleteIds": [
+   "giancarlo-bodoni"
+  ]
+ },
+ {
+  "id": "mgjj",
+  "name": "Melqui Galvão Jiu-Jitsu",
+  "aliases": [
+   "MG"
+  ],
+  "athleteIds": [
+   "diogo-reis"
+  ]
+ },
+ {
+  "id": "team6",
+  "name": "Team 6",
+  "aliases": [],
+  "athleteIds": [
+   "rider-zuchi"
+  ]
+ }
+]

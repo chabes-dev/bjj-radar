@@ -1,1 +1,397 @@
-[]
+[
+ {
+  "id": "diego-pato",
+  "name": "Diego Pato",
+  "aliases": [
+   "Diego Oliveira",
+   "Pato"
+  ],
+  "teamId": "aoj",
+  "instagram": "https://www.instagram.com/yearofpato/",
+  "youtube": null,
+  "linksVerified": true,
+  "linksSourceUrl": "https://bjj.space/news/videos"
+ },
+ {
+  "id": "cole-abate",
+  "name": "Cole Abate",
+  "aliases": [],
+  "teamId": "aoj",
+  "instagram": "https://www.instagram.com/coleabatejj/",
+  "youtube": null,
+  "linksVerified": true,
+  "linksSourceUrl": "https://bjj.space/news/videos"
+ },
+ {
+  "id": "tainan-dalpra",
+  "name": "Tainan Dalpra",
+  "aliases": [],
+  "teamId": "aoj",
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "mayssa-bastos",
+  "name": "Mayssa Bastos",
+  "aliases": [],
+  "teamId": "aoj",
+  "instagram": "https://www.instagram.com/mayssabastos/",
+  "youtube": null,
+  "linksVerified": true,
+  "linksSourceUrl": "https://bjj.space/news/videos"
+ },
+ {
+  "id": "ashlee-funegra",
+  "name": "Ashlee Funegra",
+  "aliases": [],
+  "teamId": "aoj",
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "nicholas-maglicic",
+  "name": "Nicholas Maglicic",
+  "aliases": [
+   "Nico Maglicic"
+  ],
+  "teamId": "atos",
+  "instagram": "https://www.instagram.com/nicomaglicic/",
+  "youtube": null,
+  "linksVerified": true,
+  "linksSourceUrl": "https://bjj.space/news/videos"
+ },
+ {
+  "id": "lillian-marchand",
+  "name": "Lillian Marchand",
+  "aliases": [],
+  "teamId": "atos",
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "marlon-tajik",
+  "name": "Marlon Tajik",
+  "aliases": [],
+  "teamId": "atos",
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "matheus-gabriel",
+  "name": "Matheus Gabriel",
+  "aliases": [],
+  "teamId": "checkmat",
+  "instagram": "https://www.instagram.com/matheusgabrieljj/",
+  "youtube": null,
+  "linksVerified": true,
+  "linksSourceUrl": "https://bjj.space/news/videos"
+ },
+ {
+  "id": "jansen-gomes",
+  "name": "Jansen Gomes",
+  "aliases": [],
+  "teamId": "checkmat",
+  "instagram": "https://www.instagram.com/jansengomesbjj/",
+  "youtube": null,
+  "linksVerified": true,
+  "linksSourceUrl": "https://bjj.space/news/videos"
+ },
+ {
+  "id": "jalen-fonacier",
+  "name": "Jalen Fonacier",
+  "aliases": [],
+  "teamId": "alliance",
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "janaina-lebre",
+  "name": "Janaina Lebre",
+  "aliases": [],
+  "teamId": "alliance",
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "erich-munis",
+  "name": "Erich Munis",
+  "aliases": [],
+  "teamId": "soldiers",
+  "instagram": "https://www.instagram.com/erichmunisbjj/",
+  "youtube": null,
+  "linksVerified": true,
+  "linksSourceUrl": "https://bjj.space/news/videos"
+ },
+ {
+  "id": "vinicius-liberati",
+  "name": "Vinicius Liberati",
+  "aliases": [],
+  "teamId": "soldiers",
+  "instagram": "https://www.instagram.com/viniciusliberatibjj/",
+  "youtube": null,
+  "linksVerified": true,
+  "linksSourceUrl": "https://bjj.space/news/videos"
+ },
+ {
+  "id": "gabi-pessanha",
+  "name": "Gabi Pessanha",
+  "aliases": [
+   "Gabrieli Pessanha"
+  ],
+  "teamId": "infight",
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "giancarlo-bodoni",
+  "name": "Giancarlo Bodoni",
+  "aliases": [],
+  "teamId": "newwave",
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "helena-crevar",
+  "name": "Helena Crevar",
+  "aliases": [],
+  "teamId": null,
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "mica-galvao",
+  "name": "Mica Galvao",
+  "aliases": [
+   "Mica Galvão",
+   "Micael Galvão"
+  ],
+  "teamId": null,
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "diogo-reis",
+  "name": "Diogo Reis",
+  "aliases": [],
+  "teamId": "mgjj",
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "rider-zuchi",
+  "name": "Rider Zuchi",
+  "aliases": [
+   "Rider Zucchi"
+  ],
+  "teamId": "team6",
+  "instagram": "https://www.instagram.com/riderzuchi/",
+  "youtube": null,
+  "linksVerified": true,
+  "linksSourceUrl": "https://bjj.space/news/videos"
+ },
+ {
+  "id": "seif-houmine",
+  "name": "Seif Houmine",
+  "aliases": [
+   "Seif-Eddine Houmine",
+   "Seif"
+  ],
+  "teamId": null,
+  "instagram": "https://www.instagram.com/seif_bjj/",
+  "youtube": null,
+  "linksVerified": true,
+  "linksSourceUrl": "https://bjj.space/news/videos"
+ },
+ {
+  "id": "felipe-pena",
+  "name": "Felipe Pena",
+  "aliases": [
+   "Preguiça",
+   "Preguica"
+  ],
+  "teamId": null,
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "gordon-ryan",
+  "name": "Gordon Ryan",
+  "aliases": [],
+  "teamId": null,
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "nicholas-meregali",
+  "name": "Nicholas Meregali",
+  "aliases": [
+   "Meregalli"
+  ],
+  "teamId": null,
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "kade-ruotolo",
+  "name": "Kade Ruotolo",
+  "aliases": [],
+  "teamId": null,
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "tye-ruotolo",
+  "name": "Tye Ruotolo",
+  "aliases": [],
+  "teamId": null,
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "mikey-musumeci",
+  "name": "Mikey Musumeci",
+  "aliases": [],
+  "teamId": null,
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "nicky-rodriguez",
+  "name": "Nicky Rodriguez",
+  "aliases": [
+   "Nick Rodriguez",
+   "Nicky Rod"
+  ],
+  "teamId": null,
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "victor-hugo",
+  "name": "Victor Hugo",
+  "aliases": [],
+  "teamId": null,
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "pawel-jaworski",
+  "name": "Pawel Jaworski",
+  "aliases": [],
+  "teamId": null,
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "roosevelt-sousa",
+  "name": "Roosevelt Sousa",
+  "aliases": [],
+  "teamId": null,
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "elisabeth-clay",
+  "name": "Elisabeth Clay",
+  "aliases": [
+   "Lis Clay"
+  ],
+  "teamId": null,
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "kennedy-maciel",
+  "name": "Kennedy Maciel",
+  "aliases": [],
+  "teamId": null,
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "luke-griffith",
+  "name": "Luke Griffith",
+  "aliases": [],
+  "teamId": null,
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "mason-fowler",
+  "name": "Mason Fowler",
+  "aliases": [],
+  "teamId": null,
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "andrew-tackett",
+  "name": "Andrew Tackett",
+  "aliases": [],
+  "teamId": null,
+  "instagram": null,
+  "youtube": null,
+  "linksVerified": false,
+  "linksSourceUrl": null
+ },
+ {
+  "id": "craig-jones",
+  "name": "Craig Jones",
+  "aliases": [],
+  "teamId": null,
+  "instagram": "https://www.instagram.com/craigjonesbjj/",
+  "youtube": null,
+  "linksVerified": true,
+  "linksSourceUrl": "https://jitsmagazine.com/craig-jones-confirms-that-cji-3-will-take-place-in-2026-in-original-format"
+ }
+]

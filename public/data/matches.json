@@ -1,1 +1,699 @@
-[]
+[
+ {
+  "id": "nogi-worlds-2025-f1",
+  "eventId": "nogi-worlds-2025",
+  "division": "Male Rooster",
+  "round": "Final",
+  "a": {
+   "id": null,
+   "name": "Shay Montague"
+  },
+  "b": {
+   "id": null,
+   "name": "Lucas Castro"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "nogi-worlds-2025-f2",
+  "eventId": "nogi-worlds-2025",
+  "division": "Male Light-feather",
+  "round": "Final",
+  "a": {
+   "id": null,
+   "name": "Marcos Gomes"
+  },
+  "b": {
+   "id": null,
+   "name": "Kleber Barboza"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "nogi-worlds-2025-f3",
+  "eventId": "nogi-worlds-2025",
+  "division": "Male Feather",
+  "round": "Final",
+  "a": {
+   "id": null,
+   "name": "Marco Mendes"
+  },
+  "b": {
+   "id": null,
+   "name": "Gianni Grippo"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "nogi-worlds-2025-f4",
+  "eventId": "nogi-worlds-2025",
+  "division": "Male Light",
+  "round": "Final",
+  "a": {
+   "id": "cole-abate",
+   "name": "Cole Abate"
+  },
+  "b": {
+   "id": null,
+   "name": "Julian Espinosa"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "nogi-worlds-2025-f5",
+  "eventId": "nogi-worlds-2025",
+  "division": "Male Middle",
+  "round": "Final",
+  "a": {
+   "id": null,
+   "name": "Tarik Hopstock"
+  },
+  "b": {
+   "id": null,
+   "name": "Marcelo Fausto"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "nogi-worlds-2025-f6",
+  "eventId": "nogi-worlds-2025",
+  "division": "Male Medium-heavy",
+  "round": "Final",
+  "a": {
+   "id": "pawel-jaworski",
+   "name": "Pawel Jaworski"
+  },
+  "b": {
+   "id": null,
+   "name": "Gabriel Brod"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "nogi-worlds-2025-f7",
+  "eventId": "nogi-worlds-2025",
+  "division": "Male Heavy",
+  "round": "Final",
+  "a": {
+   "id": null,
+   "name": "Javier Barter"
+  },
+  "b": {
+   "id": null,
+   "name": "Faris Ben-Lamkadem"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "nogi-worlds-2025-f8",
+  "eventId": "nogi-worlds-2025",
+  "division": "Male Super-heavy",
+  "round": "Final",
+  "a": {
+   "id": "nicholas-maglicic",
+   "name": "Nicholas Maglicic"
+  },
+  "b": {
+   "id": null,
+   "name": "Austin Morris"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "nogi-worlds-2025-f9",
+  "eventId": "nogi-worlds-2025",
+  "division": "Male Ultra-heavy",
+  "round": "Final",
+  "a": {
+   "id": "roosevelt-sousa",
+   "name": "Roosevelt Sousa"
+  },
+  "b": {
+   "id": null,
+   "name": "Heikki Jussila"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "nogi-worlds-2025-f10",
+  "eventId": "nogi-worlds-2025",
+  "division": "Male Open class",
+  "round": "Final",
+  "a": {
+   "id": "roosevelt-sousa",
+   "name": "Roosevelt Sousa"
+  },
+  "b": {
+   "id": null,
+   "name": "Elder Cruz"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "nogi-worlds-2025-f11",
+  "eventId": "nogi-worlds-2025",
+  "division": "Female Rooster",
+  "round": "Final",
+  "a": {
+   "id": null,
+   "name": "Thais Loureiro"
+  },
+  "b": {
+   "id": null,
+   "name": "Faye Cherrier"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "nogi-worlds-2025-f12",
+  "eventId": "nogi-worlds-2025",
+  "division": "Female Light-feather",
+  "round": "Final",
+  "a": {
+   "id": "ashlee-funegra",
+   "name": "Ashlee Funegra"
+  },
+  "b": {
+   "id": null,
+   "name": "Anne Druckrey"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "nogi-worlds-2025-f13",
+  "eventId": "nogi-worlds-2025",
+  "division": "Female Feather",
+  "round": "Final",
+  "a": {
+   "id": null,
+   "name": "Adele Fornarino"
+  },
+  "b": {
+   "id": null,
+   "name": "Ana Mayordomo"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "nogi-worlds-2025-f14",
+  "eventId": "nogi-worlds-2025",
+  "division": "Female Light",
+  "round": "Final",
+  "a": {
+   "id": "lillian-marchand",
+   "name": "Lillian Marchand"
+  },
+  "b": {
+   "id": null,
+   "name": "Amanda Bruse"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "nogi-worlds-2025-f15",
+  "eventId": "nogi-worlds-2025",
+  "division": "Female Middle",
+  "round": "Final",
+  "a": {
+   "id": "elisabeth-clay",
+   "name": "Elisabeth Clay"
+  },
+  "b": {
+   "id": null,
+   "name": "Rebeca Lima"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "nogi-worlds-2025-f16",
+  "eventId": "nogi-worlds-2025",
+  "division": "Female Medium-heavy",
+  "round": "Final",
+  "a": {
+   "id": "helena-crevar",
+   "name": "Helena Crevar"
+  },
+  "b": {
+   "id": null,
+   "name": "Ane Svendsen"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "nogi-worlds-2025-f17",
+  "eventId": "nogi-worlds-2025",
+  "division": "Female Heavy",
+  "round": "Final",
+  "a": {
+   "id": null,
+   "name": "Cassia Moura"
+  },
+  "b": {
+   "id": null,
+   "name": "Nia Blackman"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "nogi-worlds-2025-f18",
+  "eventId": "nogi-worlds-2025",
+  "division": "Female Super-heavy",
+  "round": "Final",
+  "a": {
+   "id": "gabi-pessanha",
+   "name": "Gabi Pessanha"
+  },
+  "b": {
+   "id": null,
+   "name": "Lauren Rojas"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "nogi-worlds-2025-f19",
+  "eventId": "nogi-worlds-2025",
+  "division": "Female Open class",
+  "round": "Final",
+  "a": {
+   "id": "elisabeth-clay",
+   "name": "Elisabeth Clay"
+  },
+  "b": {
+   "id": "gabi-pessanha",
+   "name": "Gabi Pessanha"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "worlds-2026-f20",
+  "eventId": "worlds-2026",
+  "division": "Male Open class",
+  "round": "Final",
+  "a": {
+   "id": "erich-munis",
+   "name": "Erich Munis"
+  },
+  "b": {
+   "id": null,
+   "name": "Marcus Ribeiro"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "worlds-2026-f21",
+  "eventId": "worlds-2026",
+  "division": "Male Rooster (57kg)",
+  "round": "Final",
+  "a": {
+   "id": "jalen-fonacier",
+   "name": "Jalen Fonacier"
+  },
+  "b": {
+   "id": null,
+   "name": "Thalison Soares"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "worlds-2026-f22",
+  "eventId": "worlds-2026",
+  "division": "Male Light-feather (64kg)",
+  "round": "Final",
+  "a": {
+   "id": "diego-pato",
+   "name": "Diego Pato"
+  },
+  "b": {
+   "id": null,
+   "name": "Khaled Alshehi"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "worlds-2026-f23",
+  "eventId": "worlds-2026",
+  "division": "Male Feather (70kg)",
+  "round": "Final",
+  "a": {
+   "id": "cole-abate",
+   "name": "Cole Abate"
+  },
+  "b": {
+   "id": null,
+   "name": "Samuel Nagai"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "worlds-2026-f24",
+  "eventId": "worlds-2026",
+  "division": "Male Light (76kg)",
+  "round": "Final",
+  "a": {
+   "id": "matheus-gabriel",
+   "name": "Matheus Gabriel"
+  },
+  "b": {
+   "id": null,
+   "name": "Jackson Nagai"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "worlds-2026-f25",
+  "eventId": "worlds-2026",
+  "division": "Male Middle (82kg)",
+  "round": "Final",
+  "a": {
+   "id": "tainan-dalpra",
+   "name": "Tainan Dalpra"
+  },
+  "b": {
+   "id": null,
+   "name": "Natan Cheung"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "worlds-2026-f26",
+  "eventId": "worlds-2026",
+  "division": "Male Medium-heavy (88kg)",
+  "round": "Final",
+  "a": {
+   "id": "jansen-gomes",
+   "name": "Jansen Gomes"
+  },
+  "b": {
+   "id": null,
+   "name": "Enderson Dias"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "worlds-2026-f27",
+  "eventId": "worlds-2026",
+  "division": "Male Heavy (94kg)",
+  "round": "Final",
+  "a": {
+   "id": "rider-zuchi",
+   "name": "Rider Zuchi"
+  },
+  "b": {
+   "id": "nicholas-maglicic",
+   "name": "Nicholas Maglicic"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "worlds-2026-f28",
+  "eventId": "worlds-2026",
+  "division": "Male Super-heavy (100kg)",
+  "round": "Final",
+  "a": {
+   "id": "vinicius-liberati",
+   "name": "Vinicius Liberati"
+  },
+  "b": {
+   "id": "erich-munis",
+   "name": "Erich Munis"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "worlds-2026-f29",
+  "eventId": "worlds-2026",
+  "division": "Male Ultra-heavy (+100kg)",
+  "round": "Final",
+  "a": {
+   "id": "seif-houmine",
+   "name": "Seif Houmine"
+  },
+  "b": {
+   "id": null,
+   "name": "Gutemberg Pereira"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "worlds-2026-f30",
+  "eventId": "worlds-2026",
+  "division": "Female Open class",
+  "round": "Final",
+  "a": {
+   "id": "gabi-pessanha",
+   "name": "Gabi Pessanha"
+  },
+  "b": {
+   "id": null,
+   "name": "Tayane Porfirio"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "worlds-2026-f31",
+  "eventId": "worlds-2026",
+  "division": "Female Rooster (48kg)",
+  "round": "Final",
+  "a": {
+   "id": "mayssa-bastos",
+   "name": "Mayssa Bastos"
+  },
+  "b": {
+   "id": null,
+   "name": "Thais Loureiro"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "worlds-2026-f32",
+  "eventId": "worlds-2026",
+  "division": "Female Light-feather (53kg)",
+  "round": "Final",
+  "a": {
+   "id": "ashlee-funegra",
+   "name": "Ashlee Funegra"
+  },
+  "b": {
+   "id": null,
+   "name": "Vitoria Assis"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "worlds-2026-f33",
+  "eventId": "worlds-2026",
+  "division": "Female Feather (58kg)",
+  "round": "Final",
+  "a": {
+   "id": null,
+   "name": "Sabrina Gondim"
+  },
+  "b": {
+   "id": null,
+   "name": "Gabrielle McComb"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "worlds-2026-f34",
+  "eventId": "worlds-2026",
+  "division": "Female Light (63kg)",
+  "round": "Final",
+  "a": {
+   "id": "janaina-lebre",
+   "name": "Janaina Lebre"
+  },
+  "b": {
+   "id": null,
+   "name": "Sarah Galvao"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "worlds-2026-f35",
+  "eventId": "worlds-2026",
+  "division": "Female Middle (69kg)",
+  "round": "Final",
+  "a": {
+   "id": "lillian-marchand",
+   "name": "Lillian Marchand"
+  },
+  "b": {
+   "id": "elisabeth-clay",
+   "name": "Elisabeth Clay"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "worlds-2026-f36",
+  "eventId": "worlds-2026",
+  "division": "Female Medium-heavy (74kg)",
+  "round": "Final",
+  "a": {
+   "id": null,
+   "name": "Thamara Ferreira"
+  },
+  "b": {
+   "id": null,
+   "name": "Ingridd Alves"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "worlds-2026-f37",
+  "eventId": "worlds-2026",
+  "division": "Female Heavy (79kg)",
+  "round": "Final",
+  "a": {
+   "id": null,
+   "name": "Larissa Dias"
+  },
+  "b": {
+   "id": null,
+   "name": "Maria Alencar"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "worlds-2026-f38",
+  "eventId": "worlds-2026",
+  "division": "Female Super-heavy (+79kg)",
+  "round": "Final",
+  "a": {
+   "id": "gabi-pessanha",
+   "name": "Gabi Pessanha"
+  },
+  "b": {
+   "id": null,
+   "name": "Tayane Porfirio"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ },
+ {
+  "id": "adcc-worlds-2026-f39",
+  "eventId": "adcc-worlds-2026",
+  "division": "Male +99kg",
+  "round": "Final",
+  "a": {
+   "id": "victor-hugo",
+   "name": "Victor Hugo"
+  },
+  "b": {
+   "id": null,
+   "name": "Josh Saunders"
+  },
+  "winner": "a",
+  "method": "Armbar",
+  "videoId": null
+ },
+ {
+  "id": "adcc-worlds-2026-f40",
+  "eventId": "adcc-worlds-2026",
+  "division": "Male Absolute",
+  "round": "Final",
+  "a": {
+   "id": "felipe-pena",
+   "name": "Felipe Pena"
+  },
+  "b": {
+   "id": "roosevelt-sousa",
+   "name": "Roosevelt Sousa"
+  },
+  "winner": "a",
+  "method": "Rear-naked choke",
+  "videoId": null
+ },
+ {
+  "id": "adcc-worlds-2026-s41",
+  "eventId": "adcc-worlds-2026",
+  "division": "Superfight",
+  "round": "Superfight",
+  "a": {
+   "id": null,
+   "name": "Yuri Simões"
+  },
+  "b": {
+   "id": null,
+   "name": "Kaynan Duarte"
+  },
+  "winner": "a",
+  "method": null,
+  "videoId": null
+ }
+]

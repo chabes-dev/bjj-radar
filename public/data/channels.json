@@ -1,1 +1,37 @@
-[]
+[
+ {
+  "id": "flo",
+  "name": "FloGrappling",
+  "handle": "@FloGrappling"
+ },
+ {
+  "id": "ibjjf",
+  "name": "IBJJF",
+  "handle": "@IBJJF"
+ },
+ {
+  "id": "ufcbjj",
+  "name": "UFC BJJ",
+  "handle": "@UFCBJJ"
+ },
+ {
+  "id": "polaris",
+  "name": "Polaris",
+  "handle": "@polarisbjj"
+ },
+ {
+  "id": "adcc",
+  "name": "ADCC",
+  "handle": "@ADCCOfficial"
+ },
+ {
+  "id": "bjjstars",
+  "name": "BJJ Stars",
+  "handle": "@bjjstars"
+ },
+ {
+  "id": "cji",
+  "name": "Craig Jones Invitational",
+  "handle": "@CraigJonesInvitational"
+ }
+]

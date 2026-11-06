@@ -1,1 +1,989 @@
-[]
+[
+ {
+  "id": "bjjstars-18",
+  "name": "BJJ Stars 18",
+  "org": "BJJ Stars",
+  "format": "nogi",
+  "aliases": [
+   "bjj stars 18"
+  ],
+  "start": "2025-11-22",
+  "end": "2025-11-22",
+  "location": "São Paulo, Brazil",
+  "streaming": "flo",
+  "status": "done",
+  "bracketUrl": null,
+  "sourceUrl": "https://bjj.space/event-series/bjj-stars",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "crown-2025",
+  "name": "IBJJF The Crown 2025",
+  "org": "IBJJF",
+  "format": "gi",
+  "aliases": [
+   "the crown",
+   "crown"
+  ],
+  "start": "2025-11-23",
+  "end": "2025-11-23",
+  "location": "Long Beach, USA",
+  "streaming": "flo",
+  "status": "done",
+  "bracketUrl": null,
+  "sourceUrl": "https://bjj.space/events/ibjjf-the-crown-2025",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "wno-31",
+  "name": "WNO 31",
+  "org": "WNO",
+  "format": "nogi",
+  "aliases": [
+   "wno 31",
+   "who s number one 31"
+  ],
+  "start": "2025-12-05",
+  "end": "2025-12-05",
+  "location": "Round Rock, USA",
+  "streaming": "flo",
+  "status": "done",
+  "bracketUrl": null,
+  "sourceUrl": "https://www.flograppling.com/articles/14856043-whos-on-the-wno-31-card-heres-the-complete-lineup",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "nogi-worlds-2025",
+  "name": "IBJJF No-Gi Worlds 2025",
+  "org": "IBJJF",
+  "format": "nogi",
+  "aliases": [
+   "no gi worlds",
+   "nogi worlds",
+   "world no gi"
+  ],
+  "start": "2025-12-11",
+  "end": "2025-12-13",
+  "location": "Las Vegas, USA",
+  "streaming": "flo",
+  "status": "done",
+  "bracketUrl": "https://bjjcompsystem.com",
+  "sourceUrl": "https://jitsmagazine.com/ibjjf-no-gi-world-championship-2025-full-results-and-highlights",
+  "podiums": [
+   {
+    "gender": "male",
+    "division": "Rooster",
+    "gold": "Shay Montague",
+    "silver": "Lucas Castro",
+    "bronze": [
+     "Carlos Oliveira",
+     "Everton Teixeira"
+    ]
+   },
+   {
+    "gender": "male",
+    "division": "Light-feather",
+    "gold": "Marcos Gomes",
+    "silver": "Kleber Barboza",
+    "bronze": [
+     "Vinicius Inacio",
+     "Willis Nunes"
+    ]
+   },
+   {
+    "gender": "male",
+    "division": "Feather",
+    "gold": "Marco Mendes",
+    "silver": "Gianni Grippo",
+    "bronze": [
+     "Ashley Williams",
+     "Cameron Mellott"
+    ]
+   },
+   {
+    "gender": "male",
+    "division": "Light",
+    "gold": "Cole Abate",
+    "silver": "Julian Espinosa",
+    "bronze": [
+     "Alessandro Botelho",
+     "Daniel Sathler"
+    ]
+   },
+   {
+    "gender": "male",
+    "division": "Middle",
+    "gold": "Tarik Hopstock",
+    "silver": "Marcelo Fausto",
+    "bronze": [
+     "Arley Pacheco",
+     "Matheus Luna"
+    ]
+   },
+   {
+    "gender": "male",
+    "division": "Medium-heavy",
+    "gold": "Pawel Jaworski",
+    "silver": "Gabriel Brod",
+    "bronze": [
+     "Logan Smith",
+     "Sebastian Rodriguez"
+    ]
+   },
+   {
+    "gender": "male",
+    "division": "Heavy",
+    "gold": "Javier Barter",
+    "silver": "Faris Ben-Lamkadem",
+    "bronze": [
+     "Charles Negromonte",
+     "Dante Leon"
+    ]
+   },
+   {
+    "gender": "male",
+    "division": "Super-heavy",
+    "gold": "Nicholas Maglicic",
+    "silver": "Austin Morris",
+    "bronze": [
+     "Elioenai Braz",
+     "Lucas Norat"
+    ]
+   },
+   {
+    "gender": "male",
+    "division": "Ultra-heavy",
+    "gold": "Roosevelt Sousa",
+    "silver": "Heikki Jussila",
+    "bronze": [
+     "Anderson Kauan",
+     "Helder Junior"
+    ]
+   },
+   {
+    "gender": "male",
+    "division": "Open class",
+    "gold": "Roosevelt Sousa",
+    "silver": "Elder Cruz",
+    "bronze": [
+     "Jorge Escudero",
+     "Pawel Jaworski"
+    ]
+   },
+   {
+    "gender": "female",
+    "division": "Rooster",
+    "gold": "Thais Loureiro",
+    "silver": "Faye Cherrier",
+    "bronze": [
+     "Lavinia Barbosa",
+     "Mariana Rolszt"
+    ]
+   },
+   {
+    "gender": "female",
+    "division": "Light-feather",
+    "gold": "Ashlee Funegra",
+    "silver": "Anne Druckrey",
+    "bronze": [
+     "Esther Garwood",
+     "Josefine Modig"
+    ]
+   },
+   {
+    "gender": "female",
+    "division": "Feather",
+    "gold": "Adele Fornarino",
+    "silver": "Ana Mayordomo",
+    "bronze": [
+     "Giovanah Oliveira",
+     "Mona Bailey"
+    ]
+   },
+   {
+    "gender": "female",
+    "division": "Light",
+    "gold": "Lillian Marchand",
+    "silver": "Amanda Bruse",
+    "bronze": [
+     "Brianna Ste-Marie",
+     "Caroline Brunacio"
+    ]
+   },
+   {
+    "gender": "female",
+    "division": "Middle",
+    "gold": "Elisabeth Clay",
+    "silver": "Rebeca Lima",
+    "bronze": [
+     "Fernanda Cristo",
+     "Injana Goodman"
+    ]
+   },
+   {
+    "gender": "female",
+    "division": "Medium-heavy",
+    "gold": "Helena Crevar",
+    "silver": "Ane Svendsen",
+    "bronze": [
+     "Gabriela Barroso",
+     "Jessika Torttila"
+    ]
+   },
+   {
+    "gender": "female",
+    "division": "Heavy",
+    "gold": "Cassia Moura",
+    "silver": "Nia Blackman",
+    "bronze": [
+     "Leticia Teixeira",
+     "Rain Pfaff"
+    ]
+   },
+   {
+    "gender": "female",
+    "division": "Super-heavy",
+    "gold": "Gabi Pessanha",
+    "silver": "Lauren Rojas",
+    "bronze": [
+     "Maia Matalon",
+     "Mayara Moreira"
+    ]
+   },
+   {
+    "gender": "female",
+    "division": "Open class",
+    "gold": "Elisabeth Clay",
+    "silver": "Gabi Pessanha",
+    "bronze": [
+     "Injana Goodman",
+     "Nadia Frankland"
+    ]
+   }
+  ],
+  "superfights": [],
+  "resultsSourceUrl": "https://jitsmagazine.com/ibjjf-no-gi-world-championship-2025-full-results-and-highlights"
+ },
+ {
+  "id": "ufcbjj-4",
+  "name": "UFC BJJ 4",
+  "org": "UFC BJJ",
+  "format": "nogi",
+  "aliases": [
+   "ufc bjj 4"
+  ],
+  "start": "2025-12-11",
+  "end": "2025-12-11",
+  "location": "Las Vegas, USA",
+  "streaming": "free_youtube",
+  "status": "done",
+  "bracketUrl": null,
+  "sourceUrl": "https://bjj.space/event-series/ufc-bjj",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "europeans-2026",
+  "name": "IBJJF Europeans 2026",
+  "org": "IBJJF",
+  "format": "gi",
+  "aliases": [
+   "europeans",
+   "euros",
+   "european championship"
+  ],
+  "start": "2026-01-15",
+  "end": "2026-01-24",
+  "location": "Lisbon, Portugal",
+  "streaming": "flo",
+  "status": "done",
+  "bracketUrl": "https://bjjcompsystem.com",
+  "sourceUrl": "https://www.flograppling.com/articles/15179553-ibjjf-euros-2026-brackets-heres-every-adult-division",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "polaris-35",
+  "name": "Polaris 35",
+  "org": "Polaris",
+  "format": "nogi",
+  "aliases": [
+   "polaris 35"
+  ],
+  "start": "2026-01-31",
+  "end": "2026-01-31",
+  "location": "Ebbw Vale, UK",
+  "streaming": "flo",
+  "status": "done",
+  "bracketUrl": null,
+  "sourceUrl": "https://www.tapology.com/fightcenter/fighters/265620-taylor-pearman",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "ufcbjj-5",
+  "name": "UFC BJJ 5: Musumeci vs Montague",
+  "org": "UFC BJJ",
+  "format": "nogi",
+  "aliases": [
+   "ufc bjj 5"
+  ],
+  "start": "2026-02-12",
+  "end": "2026-02-12",
+  "location": "Las Vegas, USA",
+  "streaming": "free_youtube",
+  "status": "done",
+  "bracketUrl": null,
+  "sourceUrl": "https://bjj.space/event-series/ufc-bjj",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "adcc-emea-trials-2026",
+  "name": "ADCC European, Middle East & African Trials 2026",
+  "org": "ADCC",
+  "format": "nogi",
+  "aliases": [
+   "adcc european trials",
+   "adcc euro trials",
+   "european trials"
+  ],
+  "start": "2026-02-14",
+  "end": "2026-02-15",
+  "location": "Belgrade, Serbia",
+  "streaming": "flo",
+  "status": "done",
+  "bracketUrl": null,
+  "sourceUrl": "https://digitsu.com/events/adcc-european-middle-eastern-african-trials-2026",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "ibjjf-nogi-gp-2026",
+  "name": "IBJJF No-Gi Grand Prix 2026",
+  "org": "IBJJF",
+  "format": "nogi",
+  "aliases": [
+   "no gi grand prix",
+   "nogi gp"
+  ],
+  "start": "2026-02-26",
+  "end": "2026-02-26",
+  "location": "Costa Mesa, USA",
+  "streaming": "flo",
+  "status": "done",
+  "bracketUrl": null,
+  "sourceUrl": "https://www.flograppling.com/articles/15399079-the-full-card-for-the-2026-ibjjf-no-gi-grand-prix",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "polaris-36",
+  "name": "Polaris 36",
+  "org": "Polaris",
+  "format": "nogi",
+  "aliases": [
+   "polaris 36"
+  ],
+  "start": "2026-03-07",
+  "end": "2026-03-07",
+  "location": "London, UK",
+  "streaming": "flo",
+  "status": "done",
+  "bracketUrl": null,
+  "sourceUrl": "https://bjj.space/event-series/polaris",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "ufcbjj-6",
+  "name": "UFC BJJ 6: Fowler vs Machado",
+  "org": "UFC BJJ",
+  "format": "nogi",
+  "aliases": [
+   "ufc bjj 6"
+  ],
+  "start": "2026-03-12",
+  "end": "2026-03-12",
+  "location": "Las Vegas, USA",
+  "streaming": "free_youtube",
+  "status": "done",
+  "bracketUrl": null,
+  "sourceUrl": "https://bjj.space/event-series/ufc-bjj",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "adcc-sa-trials-2026",
+  "name": "ADCC South American Trials #1 2026",
+  "org": "ADCC",
+  "format": "nogi",
+  "aliases": [
+   "adcc south american trials",
+   "south american trials"
+  ],
+  "start": "2026-03-14",
+  "end": "2026-03-14",
+  "location": "Rio de Janeiro, Brazil",
+  "streaming": "flo",
+  "status": "done",
+  "bracketUrl": null,
+  "sourceUrl": "https://digitsu.com/events/adcc-first-south-american-trials-2026",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "pans-2026",
+  "name": "IBJJF Pans 2026",
+  "org": "IBJJF",
+  "format": "gi",
+  "aliases": [
+   "pans",
+   "pan championship",
+   "pan jiu jitsu"
+  ],
+  "start": "2026-03-25",
+  "end": "2026-03-29",
+  "location": "Kissimmee, USA",
+  "streaming": "flo",
+  "status": "done",
+  "bracketUrl": "https://bjjcompsystem.com",
+  "sourceUrl": "https://www.flograppling.com/articles/15660533-the-2026-ibjjf-pan-championship-one-week-out",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "wno-32",
+  "name": "WNO 32",
+  "org": "WNO",
+  "format": "nogi",
+  "aliases": [
+   "wno 32",
+   "who s number one 32"
+  ],
+  "start": "2026-03-31",
+  "end": "2026-03-31",
+  "location": "Austin, USA",
+  "streaming": "flo",
+  "status": "done",
+  "bracketUrl": null,
+  "sourceUrl": "https://www.flograppling.com/articles/15743332-the-2026-whos-number-one-32-results-new-champions-crowned-in-austin-tx",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "ufcbjj-7",
+  "name": "UFC BJJ 7: Tackett vs Rocha",
+  "org": "UFC BJJ",
+  "format": "nogi",
+  "aliases": [
+   "ufc bjj 7"
+  ],
+  "start": "2026-04-03",
+  "end": "2026-04-03",
+  "location": "Las Vegas, USA",
+  "streaming": "free_youtube",
+  "status": "done",
+  "bracketUrl": null,
+  "sourceUrl": "https://bjj.space/events/ufc-bjj-7-tackett-vs-rocha",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "adcc-wc-trials-2026",
+  "name": "ADCC West Coast Trials 2026",
+  "org": "ADCC",
+  "format": "nogi",
+  "aliases": [
+   "adcc west coast trials",
+   "west coast trials"
+  ],
+  "start": "2026-04-19",
+  "end": "2026-04-19",
+  "location": "Pomona, USA",
+  "streaming": "flo",
+  "status": "done",
+  "bracketUrl": null,
+  "sourceUrl": "https://www.houseofgrapplers.com/news/2026-adcc-west-coast-trials-results-6e258a7e",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "brasileiros-2026",
+  "name": "IBJJF Brasileiros 2026",
+  "org": "IBJJF",
+  "format": "gi",
+  "aliases": [
+   "brasileiros",
+   "brasileiro"
+  ],
+  "start": "2026-04-24",
+  "end": "2026-05-03",
+  "location": "São Paulo, Brazil",
+  "streaming": "flo",
+  "status": "done",
+  "bracketUrl": "https://bjjcompsystem.com",
+  "sourceUrl": "https://ibjjf.com/news/the-2026-grand-slam-continues-with-brasileiro",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "ufcbjj-8",
+  "name": "UFC BJJ 8",
+  "org": "UFC BJJ",
+  "format": "nogi",
+  "aliases": [
+   "ufc bjj 8"
+  ],
+  "start": "2026-05-21",
+  "end": "2026-05-21",
+  "location": "Las Vegas, USA",
+  "streaming": "free_youtube",
+  "status": "done",
+  "bracketUrl": null,
+  "sourceUrl": "https://bjj.space/news/topics/events?page=6",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "worlds-2026",
+  "name": "IBJJF Worlds 2026",
+  "org": "IBJJF",
+  "format": "gi",
+  "aliases": [
+   "worlds",
+   "world championship",
+   "mundial",
+   "mundials"
+  ],
+  "start": "2026-05-28",
+  "end": "2026-05-31",
+  "location": "Long Beach, USA",
+  "streaming": "flo",
+  "status": "done",
+  "bracketUrl": "https://bjjcompsystem.com",
+  "sourceUrl": "https://www.bjjheroes.com/?p=14452",
+  "podiums": [
+   {
+    "gender": "male",
+    "division": "Open class",
+    "gold": "Erich Munis",
+    "silver": "Marcus Ribeiro",
+    "bronze": [
+     "Felipe Costa",
+     "Anderson Kauan"
+    ]
+   },
+   {
+    "gender": "male",
+    "division": "Rooster (57kg)",
+    "gold": "Jalen Fonacier",
+    "silver": "Thalison Soares",
+    "bronze": [
+     "Yuri Hendrex",
+     "Rodnei Barbosa"
+    ]
+   },
+   {
+    "gender": "male",
+    "division": "Light-feather (64kg)",
+    "gold": "Diego Pato",
+    "silver": "Khaled Alshehi",
+    "bronze": [
+     "Seonghyeon Joo",
+     "Gustavo Ogawa"
+    ]
+   },
+   {
+    "gender": "male",
+    "division": "Feather (70kg)",
+    "gold": "Cole Abate",
+    "silver": "Samuel Nagai",
+    "bronze": [
+     "Yuta Shimada",
+     "Joao Mendes"
+    ]
+   },
+   {
+    "gender": "male",
+    "division": "Light (76kg)",
+    "gold": "Matheus Gabriel",
+    "silver": "Jackson Nagai",
+    "bronze": [
+     "Tarcisio Santos",
+     "Romulo Diniz"
+    ]
+   },
+   {
+    "gender": "male",
+    "division": "Middle (82kg)",
+    "gold": "Tainan Dalpra",
+    "silver": "Natan Cheung",
+    "bronze": [
+     "Matheus Luna",
+     "Jose Steve"
+    ]
+   },
+   {
+    "gender": "male",
+    "division": "Medium-heavy (88kg)",
+    "gold": "Jansen Gomes",
+    "silver": "Enderson Dias",
+    "bronze": [
+     "Wallisson Oliveira",
+     "Gabriel Galvao"
+    ]
+   },
+   {
+    "gender": "male",
+    "division": "Heavy (94kg)",
+    "gold": "Rider Zuchi",
+    "silver": "Nicholas Maglicic",
+    "bronze": [
+     "Felipe Santos",
+     "Leonardo Ferreira"
+    ]
+   },
+   {
+    "gender": "male",
+    "division": "Super-heavy (100kg)",
+    "gold": "Vinicius Liberati",
+    "silver": "Erich Munis",
+    "bronze": [
+     "Harryson Pereira",
+     "Windson Torres"
+    ]
+   },
+   {
+    "gender": "male",
+    "division": "Ultra-heavy (+100kg)",
+    "gold": "Seif Houmine",
+    "silver": "Gutemberg Pereira",
+    "bronze": [
+     "Anderson Kauan",
+     "Marcus Ribeiro"
+    ]
+   },
+   {
+    "gender": "female",
+    "division": "Open class",
+    "gold": "Gabi Pessanha",
+    "silver": "Tayane Porfirio",
+    "bronze": [
+     "Maria Ruffatto",
+     "Sarah Galvao"
+    ]
+   },
+   {
+    "gender": "female",
+    "division": "Rooster (48kg)",
+    "gold": "Mayssa Bastos",
+    "silver": "Thais Loureiro",
+    "bronze": [
+     "Jessica Caroline",
+     "Mariana Rolszt"
+    ]
+   },
+   {
+    "gender": "female",
+    "division": "Light-feather (53kg)",
+    "gold": "Ashlee Funegra",
+    "silver": "Vitoria Assis",
+    "bronze": [
+     "Andressa Guirau",
+     "Thaynara Victoria"
+    ]
+   },
+   {
+    "gender": "female",
+    "division": "Feather (58kg)",
+    "gold": "Sabrina Gondim",
+    "silver": "Gabrielle McComb",
+    "bronze": [
+     "Margot Ciccarelli",
+     "Giovanah Oliveira"
+    ]
+   },
+   {
+    "gender": "female",
+    "division": "Light (63kg)",
+    "gold": "Janaina Lebre",
+    "silver": "Sarah Galvao",
+    "bronze": [
+     "Giovanna Leite",
+     "Beatrice Jin"
+    ]
+   },
+   {
+    "gender": "female",
+    "division": "Middle (69kg)",
+    "gold": "Lillian Marchand",
+    "silver": "Elisabeth Clay",
+    "bronze": [
+     "Emily Hernandez",
+     "Larissa Martins"
+    ]
+   },
+   {
+    "gender": "female",
+    "division": "Medium-heavy (74kg)",
+    "gold": "Thamara Ferreira",
+    "silver": "Ingridd Alves",
+    "bronze": [
+     "Izadora Cristina",
+     "Maria Vicentini"
+    ]
+   },
+   {
+    "gender": "female",
+    "division": "Heavy (79kg)",
+    "gold": "Larissa Dias",
+    "silver": "Maria Alencar",
+    "bronze": [
+     "Yara Soares",
+     "Tamiris Silva"
+    ]
+   },
+   {
+    "gender": "female",
+    "division": "Super-heavy (+79kg)",
+    "gold": "Gabi Pessanha",
+    "silver": "Tayane Porfirio",
+    "bronze": [
+     "Luane Carvalho",
+     "Simone Abreu"
+    ]
+   }
+  ],
+  "superfights": [],
+  "resultsSourceUrl": "https://www.bjjheroes.com/?p=14452"
+ },
+ {
+  "id": "polaris-37",
+  "name": "Polaris 37: BJJ Stars vs Polaris All Stars",
+  "org": "Polaris",
+  "format": "nogi",
+  "aliases": [
+   "polaris 37"
+  ],
+  "start": "2026-06-06",
+  "end": "2026-06-06",
+  "location": "Dublin, Ireland",
+  "streaming": "flo",
+  "status": "done",
+  "bracketUrl": null,
+  "sourceUrl": "https://www.flograppling.com/articles/15968001-what-to-expect-at-polaris-37-bjj-stars-vs-polaris",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "bjjstars-19",
+  "name": "BJJ Stars 19",
+  "org": "BJJ Stars",
+  "format": "nogi",
+  "aliases": [
+   "bjj stars 19"
+  ],
+  "start": "2026-07-31",
+  "end": "2026-07-31",
+  "location": "Brazil",
+  "streaming": "flo",
+  "status": "done",
+  "bracketUrl": null,
+  "sourceUrl": "https://www.flograppling.com/articles/16099989-grappling-bulletin-gregor-wins-bjj-stars-bjj-back-in-ny-more",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "adcc-worlds-2026",
+  "name": "ADCC World Championship 2026",
+  "org": "ADCC",
+  "format": "nogi",
+  "aliases": [
+   "adcc worlds",
+   "adcc world championship",
+   "adcc 2026"
+  ],
+  "start": "2026-09-12",
+  "end": "2026-09-13",
+  "location": "Kraków, Poland",
+  "streaming": "flo",
+  "status": "done",
+  "bracketUrl": null,
+  "sourceUrl": "https://www.elitesports.com/blogs/news/bjj-competition-2026",
+  "podiums": [
+   {
+    "gender": "male",
+    "division": "-66kg",
+    "gold": "Kennedy Maciel",
+    "silver": null,
+    "bronze": []
+   },
+   {
+    "gender": "male",
+    "division": "-77kg",
+    "gold": "Magomed Dzharbaev",
+    "silver": null,
+    "bronze": []
+   },
+   {
+    "gender": "male",
+    "division": "-88kg",
+    "gold": "Pawel Jaworski",
+    "silver": null,
+    "bronze": []
+   },
+   {
+    "gender": "male",
+    "division": "-99kg",
+    "gold": "Luke Griffith",
+    "silver": null,
+    "bronze": []
+   },
+   {
+    "gender": "male",
+    "division": "+99kg",
+    "gold": "Victor Hugo",
+    "silver": "Josh Saunders",
+    "bronze": []
+   },
+   {
+    "gender": "female",
+    "division": "-55kg",
+    "gold": "Jasmine Rocha",
+    "silver": null,
+    "bronze": []
+   },
+   {
+    "gender": "female",
+    "division": "-65kg",
+    "gold": "Ana Carolina Vieira",
+    "silver": null,
+    "bronze": []
+   },
+   {
+    "gender": "female",
+    "division": "+65kg",
+    "gold": "Helena Crevar",
+    "silver": null,
+    "bronze": []
+   },
+   {
+    "gender": "male",
+    "division": "Absolute",
+    "gold": "Felipe Pena",
+    "silver": "Roosevelt Sousa",
+    "bronze": []
+   }
+  ],
+  "superfights": [
+   {
+    "a": "Yuri Simões",
+    "b": "Kaynan Duarte",
+    "winner": "a",
+    "method": null
+   }
+  ],
+  "resultsSourceUrl": "https://www.elitesports.com/blogs/news/bjj-competition-2026"
+ },
+ {
+  "id": "ufcbjj-11",
+  "name": "UFC BJJ 11: Musumeci vs Mitchell",
+  "org": "UFC BJJ",
+  "format": "nogi",
+  "aliases": [
+   "ufc bjj 11"
+  ],
+  "start": "2026-09-24",
+  "end": "2026-09-24",
+  "location": "Las Vegas, USA",
+  "streaming": "free_youtube",
+  "status": "done",
+  "bracketUrl": null,
+  "sourceUrl": "https://www.elitesports.com/blogs/news/bjj-competition-2026",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "pan-nogi-2026",
+  "name": "IBJJF Pan No-Gi 2026",
+  "org": "IBJJF",
+  "format": "nogi",
+  "aliases": [
+   "pan no gi",
+   "no gi pans",
+   "nogi pans"
+  ],
+  "start": "2026-10-02",
+  "end": "2026-10-04",
+  "location": "Secaucus, USA",
+  "streaming": "flo",
+  "status": "done",
+  "bracketUrl": "https://bjjcompsystem.com",
+  "sourceUrl": "https://bjj.space/events/pan-ibjjf-jiu-jitsu-no-gi-championship-2026",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "crown-2026",
+  "name": "IBJJF The Crown 2026",
+  "org": "IBJJF",
+  "format": "gi",
+  "aliases": [
+   "the crown",
+   "crown"
+  ],
+  "start": "2026-11-08",
+  "end": "2026-11-08",
+  "location": "Long Beach, USA",
+  "streaming": "flo",
+  "status": "upcoming",
+  "bracketUrl": null,
+  "sourceUrl": "https://ibjjf.com/news/2026-crown-seif-signed-for-ultra-heavyweight",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "nogi-worlds-2026",
+  "name": "IBJJF No-Gi Worlds 2026",
+  "org": "IBJJF",
+  "format": "nogi",
+  "aliases": [
+   "no gi worlds",
+   "nogi worlds",
+   "world no gi"
+  ],
+  "start": "2026-12-10",
+  "end": "2026-12-12",
+  "location": "Las Vegas, USA",
+  "streaming": "flo",
+  "status": "upcoming",
+  "bracketUrl": "https://bjjcompsystem.com",
+  "sourceUrl": "https://www.flograppling.com/articles/16145316-how-to-watch-2026-world-ibjjf-jiu-jitsu-no-gi-championship-grappling",
+  "podiums": [],
+  "superfights": []
+ },
+ {
+  "id": "europeans-2027",
+  "name": "IBJJF Europeans 2027",
+  "org": "IBJJF",
+  "format": "gi",
+  "aliases": [
+   "europeans",
+   "euros",
+   "european championship"
+  ],
+  "start": "2027-01-13",
+  "end": "2027-01-24",
+  "location": "Lisbon, Portugal",
+  "streaming": "flo",
+  "status": "upcoming",
+  "bracketUrl": null,
+  "sourceUrl": "https://ibjjf.com/events/european-ibjjf-jiu-jitsu-championship-2027/pre_schedule",
+  "podiums": [],
+  "superfights": []
+ }
+]

@@ -42,10 +42,11 @@ export function validate(d) {
     if (!Array.isArray(a.aliases)) err(`athlete ${a.id}: aliases must be an array`);
     if (a.teamId && !teamIds.has(a.teamId)) err(`athlete ${a.id}: unknown team ${a.teamId}`);
     if (a.linksVerified && !a.instagram && !a.youtube) err(`athlete ${a.id}: linksVerified true but no link`);
+    if (a.linksVerified && !a.linksSourceUrl) err(`athlete ${a.id}: linksVerified needs linksSourceUrl`);
   }
   for (const e of d.events) {
     const w = `event ${e.id}`;
-    need(e, ['id', 'name', 'org', 'format', 'start', 'end', 'status', 'streaming'], w);
+    need(e, ['id', 'name', 'org', 'format', 'start', 'end', 'status', 'streaming', 'sourceUrl'], w);
     if (e.format && !['gi', 'nogi'].includes(e.format)) err(`${w}: format must be gi|nogi`);
     if (!['upcoming', 'live', 'done'].includes(e.status)) err(`${w}: bad status ${e.status}`);
     if (!['flo', 'free_youtube', 'other'].includes(e.streaming)) err(`${w}: bad streaming ${e.streaming}`);
