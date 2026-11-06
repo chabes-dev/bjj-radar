@@ -1,7 +1,9 @@
-// Spoiler-safe video titles.
+// Spoiler-safe video titles. Allow-list: the output is only ever "A vs B" or "Full match".
+// The raw title is never passed through, so unknown spoiler phrasings can't leak.
 
-const SEP = /\s+(?:vs\.?|x)\s+/i;
-const SPOILER = /\s+(?:submits?|beats?|defeats?|wins?(?:\s+against|\s+over)?|taps(?:\s+out)?|chokes(?:\s+out)?|finishes|stuns|upsets)\s+/i;
+const SEP = /\s+(?:vs\.?|x|versus)\s+/i;
+// Phrasings that put a winner between two names. Used only to recover the pair.
+const RESULT = /\s+(?:gets\s+submitted\s+by|submits?|subs|def\.?|defeats?|beats?|wins?(?:\s+against|\s+over)?|taps(?:\s+out)?|chokes(?:\s+out)?|finishes|stuns|upsets|finaliza|vence|venceu|derrota|bate)\s+/i;
 
 // A plausible athlete name: 1–4 words, each starting with an uppercase letter.
 function looksLikeName(s) {
@@ -9,8 +11,9 @@ function looksLikeName(s) {
   return words.length >= 1 && words.length <= 4 && words.every((w) => /^\p{Lu}/u.test(w));
 }
 
-function firstSegment(title) {
-  return String(title ?? '').split('|')[0].trim();
+// Title segments split on "|", " - ", and ":".
+function segments(title) {
+  return String(title ?? '').split(/\s*\|\s*|\s+[-–—]\s+|:\s+/).map((s) => s.replace(/\bfull\s+match\b|\bluta\s+completa\b/ig, '').trim()).filter(Boolean);
 }
 
 function splitBy(seg, re) {
@@ -23,16 +26,20 @@ function splitBy(seg, re) {
 
 // Returns the two names in "A vs B" / "A x B" / "A VS. B" titles, else null.
 export function parsePair(title) {
-  return splitBy(firstSegment(title), SEP);
-}
-
-export function hasSpoiler(title) {
-  return SPOILER.test(firstSegment(title)) || /\bwins?\b/i.test(firstSegment(title));
+  for (const seg of segments(title)) {
+    const p = splitBy(seg, SEP);
+    if (p) return p;
+  }
+  return null;
 }
 
 export function safeTitle(raw) {
-  const seg = firstSegment(raw);
-  if (!hasSpoiler(raw)) return raw;
-  const pair = splitBy(seg, SPOILER);
-  return pair ? `${pair[0]} vs ${pair[1]}` : 'Full match';
+  const pair = parsePair(raw);
+  if (pair) return `${pair[0]} vs ${pair[1]}`;
+  for (const seg of segments(raw)) {
+    const p = splitBy(seg, RESULT);
+    // Sort so the winner/loser order doesn't leak.
+    if (p) return p.sort((x, y) => x.localeCompare(y)).join(' vs ');
+  }
+  return 'Full match';
 }

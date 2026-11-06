@@ -11,10 +11,10 @@ export function digest(data, lastVisit, now = new Date()) {
   since = Math.max(since, t - MAX_LOOKBACK_DAYS * DAY);
 
   const happened = data.events
-    .filter((e) => { const end = Date.parse(e.end) + DAY; return end > since && end <= t; })
+    .filter((e) => { const at = e.resultsAddedAt ? Date.parse(e.resultsAddedAt) : Date.parse(e.end) + DAY; return at > since && at <= t && Date.parse(e.end) <= t; })
     .sort((a, b) => b.end.localeCompare(a.end));
   const newVideos = data.videos
-    .filter((v) => { const p = Date.parse(v.publishedAt); return p > since && p <= t; })
+    .filter((v) => { const p = Date.parse(v.addedAt ?? v.publishedAt); return p > since && p <= t; })
     .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
   const upcoming = data.events
     .filter((e) => { const s = Date.parse(e.start); return s > t && s <= t + UPCOMING_DAYS * DAY; })

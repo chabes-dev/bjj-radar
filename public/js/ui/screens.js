@@ -11,7 +11,13 @@ const isStarredVideo = (s, v) => (v.athleteIds ?? []).some((a) => followed(s).ha
 
 function videoList(s, list) {
   if (!list.length) return '';
-  return `<ul class="videos">${list.map((v) => videoCard(v, { isNew: Date.parse(v.publishedAt) > Date.parse(s.since), starred: isStarredVideo(s, v), channelName: channelName(s, v.channelId) })).join('')}</ul>`;
+  return `<ul class="videos">${list.map((v) => videoCard(v, { isNew: Date.parse(v.addedAt ?? v.publishedAt) > Date.parse(s.since), starred: isStarredVideo(s, v), channelName: channelName(s, v.channelId) })).join('')}</ul>`;
+}
+
+function maybeBlock(s) {
+  const list = s.videos.filter((v) => v.match === 'maybe' && Date.parse(v.addedAt ?? v.publishedAt) > Date.parse(s.since));
+  if (!list.length) return '';
+  return `<h2>Maybe new</h2><p class="muted">Full matches we couldn't place for sure. Claude sorts them out on Monday.</p>${videoList(s, list.slice(0, 8))}`;
 }
 
 function resultsBlock(s, d) {
@@ -27,6 +33,7 @@ export function home(s) {
   return `<h1>Catch up</h1><p class="sub">${esc(since)}.</p>
     <h2>New on YouTube</h2>
     ${d.newVideos.length ? videoList(s, d.newVideos.slice(0, 12)) : '<p class="empty">No new free full matches. Tap the refresh button to check YouTube now.</p>'}
+    ${maybeBlock(s)}
     ${resultsBlock(s, d)}
     <h2>Coming up</h2>
     ${d.upcoming.length ? `<ul class="events">${d.upcoming.map((e) => eventRow(e, 0)).join('')}</ul>` : '<p class="empty">Nothing in the next 30 days.</p>'}`;
@@ -59,7 +66,6 @@ function placings(p) {
 export function event(s, id) {
   const e = s.data.events.find((x) => x.id === id);
   if (!e) return `<h1>Event not found</h1><p class="empty">This event isn't in the list anymore. <a href="#/calendar">Back to the calendar</a>.</p>`;
-  const fol = followed(s);
   const vids = videosFor(s, id).sort((a, b) => (isStarredVideo(s, b) - isStarredVideo(s, a)) || a.publishedAt.localeCompare(b.publishedAt));
   const maybe = s.videos.filter((v) => v.eventId === id && v.match === 'maybe');
   const starredEvent = s.stars.events.includes(id);
@@ -68,8 +74,7 @@ export function event(s, id) {
   const R = { has: (k) => revealedAll || s.revealed.has(k) };
   const podiums = e.podiums.map((p) => {
     const k = `podium:${id}:${p.gender}:${p.division}`;
-    const mine = [p.gold, p.silver, ...p.bronze].some((n) => n && [...fol].some((a) => s.athleteName(a) === n));
-    return `<div class="podium"><div class="div">${mine ? '<span class="star">★ </span>' : ''}${esc(p.gender === 'male' ? 'Men' : 'Women')}, ${esc(p.division)}</div>${revealBlock(k, R, 'Tap to reveal the podium', placings(p))}</div>`;
+    return `<div class="podium"><div class="div">${esc(p.gender === 'male' ? 'Men' : 'Women')}, ${esc(p.division)}</div>${revealBlock(k, R, 'Tap to reveal the podium', placings(p))}</div>`;
   }).join('');
   const supers = e.superfights.map((sf, i) => {
     const k = `super:${id}:${i}`;
@@ -119,13 +124,17 @@ export function athlete(s, id) {
     .sort((x, y) => y.e.start.localeCompare(x.e.start));
   const vids = s.videos.filter((v) => (v.athleteIds ?? []).includes(id)).sort((x, y) => y.publishedAt.localeCompare(x.publishedAt));
   const links = a.linksVerified ? [a.instagram && `<a class="btn" href="${esc(a.instagram)}" target="_blank" rel="noopener">Instagram</a>`, a.youtube && `<a class="btn" href="${esc(a.youtube)}" target="_blank" rel="noopener">YouTube</a>`].filter(Boolean).join('') : '';
-  const rows = matches.map(({ m, e }) => {
-    const opp = m.a.id === id ? m.b : m.a;
-    const k = `match:${m.id}`;
-    const won = (m.winner === 'a') === (m.a.id === id);
-    const video = m.videoId ? ` <a href="https://www.youtube.com/watch?v=${esc(m.videoId)}" target="_blank" rel="noopener">Watch</a>` : '';
-    return `<div class="matchrow"><div class="mt">vs ${esc(opp.name)}</div><div class="muted">${esc(e.name)}, ${esc(m.division)}, ${esc(m.round)}${video}</div>
-      ${revealBlock(k, s.revealed, 'Tap to reveal the result', `<p style="margin:4px 0 0">${won ? 'Won' : 'Lost'}${m.method ? `, ${esc(m.method)}` : ''}</p>`)}</div>`;
+  const byEvent = new Map();
+  for (const x of matches) { if (!byEvent.has(x.e.id)) byEvent.set(x.e.id, { e: x.e, list: [] }); byEvent.get(x.e.id).list.push(x.m); }
+  const rows = [...byEvent.values()].map(({ e, list }) => {
+    const inner = list.map((m) => {
+      const opp = m.a.id === id ? m.b : m.a;
+      const result = m.winner ? `${(m.winner === 'a') === (m.a.id === id) ? 'Won' : 'Lost'}${m.method ? `, ${esc(m.method)}` : ''}` : 'Result not recorded';
+      const video = m.videoId ? ` <a href="https://www.youtube.com/watch?v=${esc(m.videoId)}" target="_blank" rel="noopener">Watch</a>` : '';
+      return `<p style="margin:6px 0 0"><strong>vs ${esc(opp.name)}</strong>, ${esc(m.division)}, ${esc(m.round)}. ${result}.${video}</p>`;
+    }).join('');
+    const label = `${list.length} recorded ${list.length === 1 ? 'match' : 'matches'}. Tap to reveal`;
+    return `<div class="matchrow"><div class="mt">${esc(e.name)}</div>${revealBlock(`athlete:${id}:${e.id}`, s.revealed, label, inner)}</div>`;
   }).join('');
   return `<h1>${esc(a.name)}</h1><p class="sub">${esc(team?.name ?? 'No team listed')}</p>
     <div class="links">${starButton('athletes', id, s.stars.athletes.includes(id), a.name)}${links}</div>

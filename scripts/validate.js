@@ -44,8 +44,12 @@ export function validate(d) {
     if (a.linksVerified && !a.instagram && !a.youtube) err(`athlete ${a.id}: linksVerified true but no link`);
     if (a.linksVerified && !a.linksSourceUrl) err(`athlete ${a.id}: linksVerified needs linksSourceUrl`);
   }
+  const HTTPS = /^https:\/\//;
+  const url = (v, where) => { if (v && !HTTPS.test(v)) err(`${where}: link must start with https://`); };
+  for (const a of d.athletes) { url(a.instagram, `athlete ${a.id} instagram`); url(a.youtube, `athlete ${a.id} youtube`); url(a.linksSourceUrl, `athlete ${a.id} linksSourceUrl`); }
   for (const e of d.events) {
     const w = `event ${e.id}`;
+    url(e.sourceUrl, `${w} sourceUrl`); url(e.bracketUrl, `${w} bracketUrl`); url(e.resultsSourceUrl, `${w} resultsSourceUrl`);
     need(e, ['id', 'name', 'org', 'format', 'start', 'end', 'status', 'streaming', 'sourceUrl'], w);
     if (e.format && !['gi', 'nogi'].includes(e.format)) err(`${w}: format must be gi|nogi`);
     if (!['upcoming', 'live', 'done'].includes(e.status)) err(`${w}: bad status ${e.status}`);

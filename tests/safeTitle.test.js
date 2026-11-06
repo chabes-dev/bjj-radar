@@ -3,16 +3,15 @@ import assert from 'node:assert/strict';
 import { safeTitle, parsePair } from '../public/js/lib/safeTitle.js';
 
 test('winner verb title becomes X vs Y', () => {
-  assert.equal(safeTitle('Gordon Ryan SUBMITS Felipe Pena | ADCC'), 'Gordon Ryan vs Felipe Pena');
+  assert.equal(safeTitle('Gordon Ryan SUBMITS Felipe Pena | ADCC'), 'Felipe Pena vs Gordon Ryan'); // sorted: order must not reveal the winner
 });
 for (const v of ['beats', 'Defeats', 'wins against', 'taps', 'chokes', 'finishes', 'stuns', 'upsets']) {
   test(`verb "${v}" is hidden`, () => {
     assert.equal(safeTitle(`Ana Silva ${v} Bia Costa | FULL MATCH`), 'Ana Silva vs Bia Costa');
   });
 }
-test('neutral title unchanged', () => {
-  const t = 'Rerrison Gabriel vs Diego Pato | FULL MATCH | 2026 IBJJF Brasileiros';
-  assert.equal(safeTitle(t), t);
+test('neutral title keeps only the pair', () => {
+  assert.equal(safeTitle('Rerrison Gabriel vs Diego Pato | FULL MATCH | 2026 IBJJF Brasileiros'), 'Rerrison Gabriel vs Diego Pato');
 });
 test('parsePair handles x and VS.', () => {
   assert.deepEqual(parsePair('A x B | LUTA COMPLETA'), ['A', 'B']);

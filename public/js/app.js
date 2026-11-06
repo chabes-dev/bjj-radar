@@ -3,6 +3,8 @@ import { createStore, EMPTY_STARS } from './lib/store.js';
 import { matchVideo } from './lib/match.js';
 import { safeTitle } from './lib/safeTitle.js';
 import { ago } from './ui/components.js';
+import { rotateVisit } from './lib/visit.js';
+import { mergeVideos as merge } from './lib/videos.js';
 import * as screens from './ui/screens.js';
 
 const FILES = ['events', 'athletes', 'teams', 'videos', 'matches', 'channels', 'meta'];
@@ -16,12 +18,19 @@ const state = {
   revealed: new Set(store.get('revealed', [])),
   ui: { format: 'all', when: 'upcoming', followTab: 'athletes', q: '' },
   now: new Date(),
-  sinceRaw: store.get('lastVisit', null),
+  sinceRaw: null,
   get since() { return this.sinceRaw ?? new Date(this.now.getTime() - 30 * 86400000).toISOString(); },
   athleteName(id) { return this.data.athletes.find((a) => a.id === id)?.name; },
 };
-// This visit's "since" is fixed at open; the next visit starts from now.
-store.set('lastVisit', state.now.toISOString());
+// "Since" is fixed per session (6h), and only rotated once data has loaded.
+function startVisit() {
+  state.now = new Date();
+  const legacy = store.get('lastVisit', null);
+  const saved = store.get('visit', legacy ? { lastVisit: legacy } : {});
+  const r = rotateVisit(saved, state.now);
+  state.sinceRaw = r.since;
+  store.set('visit', r.saved);
+}
 
 async function loadData() {
   const entries = await Promise.all(FILES.map(async (f) => [f, await (await fetch(`/data/${f}.json`)).json()]));
@@ -30,10 +39,7 @@ async function loadData() {
 }
 
 function mergeVideos() {
-  const cache = store.get('refreshCache', { videos: [] });
-  const known = new Set(state.data.videos.map((v) => v.youtubeId));
-  const extra = cache.videos.filter((v) => !known.has(v.youtubeId));
-  state.videos = [...state.data.videos, ...extra];
+  state.videos = merge(state.data.videos, store.get('refreshCache', null), state.data.meta.lastRun);
 }
 
 function setStatus(text) { $('status').textContent = text; }
@@ -56,11 +62,11 @@ async function refresh() {
     const res = await fetch(`/api/refresh?since=${encodeURIComponent(since)}`);
     if (!res.ok) throw new Error((await res.json().catch(() => ({}))).error ?? 'upstream');
     const body = await res.json();
-    const ctx = { channels: state.data.channels, events: state.data.events, athletes: state.data.athletes };
+    const ctx = { channels: state.data.channels, events: state.data.events, athletes: state.data.athletes, matches: state.data.matches };
     const found = body.videos
       .map((v) => ({ v, r: matchVideo(v, ctx) }))
       .filter(({ r }) => r.status !== 'none')
-      .map(({ v, r }) => ({ youtubeId: v.youtubeId, rawTitle: v.title, safeTitle: safeTitle(v.title), channelId: v.channelId, publishedAt: v.publishedAt, eventId: r.eventId, athleteIds: r.athleteIds, match: r.status }));
+      .map(({ v, r }) => ({ youtubeId: v.youtubeId, rawTitle: v.title, safeTitle: safeTitle(v.title), channelId: v.channelId, publishedAt: v.publishedAt, addedAt: body.checkedAt, eventId: r.eventId, athleteIds: r.athleteIds, match: r.status }));
     store.set('refreshCache', { checkedAt: body.checkedAt, since, videos: found });
     mergeVideos();
     render();
@@ -86,7 +92,7 @@ function render() {
   $('app').innerHTML = view();
   const tab = { event: 'calendar', athlete: 'following' }[r.name] ?? r.name;
   document.querySelectorAll('.tabs a').forEach((a) => { if (a.dataset.tab === tab) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
-  const newCount = state.videos.filter((v) => v.match === 'confirmed' && Date.parse(v.publishedAt) > Date.parse(state.since)).length;
+  const newCount = state.videos.filter((v) => v.match === 'confirmed' && Date.parse(v.addedAt ?? v.publishedAt) > Date.parse(state.since)).length;
   $('newcount').hidden = !newCount;
   $('newcount').textContent = newCount;
 }
@@ -121,8 +127,14 @@ document.addEventListener('input', (ev) => {
 window.addEventListener('hashchange', () => { render(); window.scrollTo(0, 0); });
 $('refresh').addEventListener('click', refresh);
 
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState !== 'visible' || !state.data) return;
+  if (Date.now() - state.now.getTime() < 3600000) return;
+  loadData().then(() => { startVisit(); render(); setStatus(baseStatus()); }).catch(() => {});
+});
+
 loadData()
-  .then(() => { render(); setStatus(baseStatus()); })
+  .then(() => { startVisit(); render(); setStatus(baseStatus()); })
   .catch(() => { $('app').innerHTML = '<h1>Can’t load the data</h1><p class="empty">Check your connection and open the app again.</p>'; });
 
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(() => {});

@@ -1,5 +1,7 @@
 // Device storage. Every access is guarded; falls back to memory.
-export function createStore(storage = globalThis.localStorage) {
+export function createStore(storageArg) {
+  let storage = null;
+  try { storage = storageArg ?? globalThis.localStorage ?? null; } catch { storage = null; }
   const mem = new Map();
   const PREFIX = 'bjjradar:';
   return {

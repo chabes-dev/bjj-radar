@@ -17,24 +17,31 @@ function inWindow(event, date) {
   return date >= start && date <= end;
 }
 
+// Longest alias of `event` found in the title (year stripped), or null.
 function aliasHit(titleNorm, event) {
-  return [event.name, ...(event.aliases ?? [])].some((a) => {
-    const n = normalizeName(a).replace(/\b20\d\d\b/g, '').trim();
-    return n && (' ' + titleNorm + ' ').includes(' ' + n + ' ');
-  });
+  let best = null;
+  for (const a of [event.name, ...(event.aliases ?? [])]) {
+    const n = normalizeName(a).replace(/\b20\d\d\b/g, '').replace(/\s+/g, ' ').trim();
+    if (n && (' ' + titleNorm + ' ').includes(' ' + n + ' ') && (!best || n.length > best.length)) best = n;
+  }
+  return best;
 }
 
 function eventFromName(title, events, date) {
   const t = normalizeName(title);
   const year = (title.match(/\b(20\d\d)\b/) || [])[1];
-  const hits = events.filter((e) => aliasHit(t, e));
+  let hits = events.map((e) => ({ e, alias: aliasHit(t, e) })).filter((h) => h.alias);
   if (!hits.length) return { hit: false, id: null };
+  // "worlds" is inside "no gi worlds": a hit contained in a longer hit loses.
+  hits = hits.filter((h) => !hits.some((o) => o.alias.length > h.alias.length && (' ' + o.alias + ' ').includes(' ' + h.alias + ' ')));
   // A year in the title is the strongest signal: it overrides the date window.
   const pool = year
-    ? hits.filter((e) => e.start.startsWith(year))
-    : hits.filter((e) => inWindow(e, date));
-  return { hit: true, id: pool.length === 1 ? pool[0].id : null };
+    ? hits.filter((h) => h.e.start.startsWith(year))
+    : hits.filter((h) => inWindow(h.e, date));
+  return { hit: true, id: pool.length === 1 ? pool[0].e.id : null };
 }
+
+const latestEnded = (list) => list.slice().sort((a, b) => b.end.localeCompare(a.end))[0]?.id ?? null;
 
 export function matchVideo(video, ctx) {
   const none = { status: 'none', eventId: null, athleteIds: [] };
@@ -54,11 +61,18 @@ export function matchVideo(video, ctx) {
   if (byName.id) return { status: 'confirmed', eventId: byName.id, athleteIds: full };
 
   const windowEvents = ctx.events.filter((e) => inWindow(e, date));
-  const onlyEvent = windowEvents.length === 1 ? windowEvents[0].id : null;
-  if (full.length >= 2 && onlyEvent) return { status: 'confirmed', eventId: onlyEvent, athleteIds: full };
+  if (full.length >= 2 && windowEvents.length) {
+    if (windowEvents.length === 1) return { status: 'confirmed', eventId: windowEvents[0].id, athleteIds: full };
+    // Several events overlap: confirm only if a recorded match pairs these athletes at one of them.
+    const ids = new Set(windowEvents.map((e) => e.id));
+    const recorded = [...new Set((ctx.matches ?? [])
+      .filter((m) => ids.has(m.eventId) && full.includes(m.a?.id) && full.includes(m.b?.id))
+      .map((m) => m.eventId))];
+    if (recorded.length === 1) return { status: 'confirmed', eventId: recorded[0], athleteIds: full };
+  }
 
   if (full.length || surnameHit || byName.hit) {
-    return { status: 'maybe', eventId: onlyEvent, athleteIds: full };
+    return { status: 'maybe', eventId: latestEnded(windowEvents.filter((e) => Date.parse(e.end) <= date)) ?? latestEnded(windowEvents), athleteIds: full };
   }
   return none;
 }
