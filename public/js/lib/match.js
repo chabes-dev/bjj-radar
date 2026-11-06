@@ -4,7 +4,7 @@ import { normalizeName, nameMatches } from './normalize.js';
 const DAY = 86400000;
 export const WINDOW_DAYS = 120; // videos may appear up to ~4 months after an event
 
-const FULL = /\b(full\s+match|full\s+fight|complete\s+match|luta\s+completa|lucha\s+completa)\b/i;
+const FULL = /\b(full\s+match|full\s+final|full\s+fight|complete\s+match|luta\s+completa|lucha\s+completa)\b/i;
 const NOT_FULL = /(#shorts|\bhighlights?\b|\bteaser\b|\btrailer\b|\bpreview\b|\brecap\b|\bsupercut\b|\breaction\b)/i;
 
 export function isFullMatch(title) {
