@@ -21,7 +21,17 @@
  },
  {
   "id": "bteam",
-  "name": "The B-Team (CJI)",
+  "name": "Craig Jones Invitational / B-Team",
   "handle": "@BTeamJiuJitsu"
+ },
+ {
+  "id": "ufcbjj",
+  "name": "UFC BJJ",
+  "handle": "@ufcbjjofficial"
+ },
+ {
+  "id": "adcc",
+  "name": "ADCC",
+  "handle": "@adcc-official"
  }
 ]
