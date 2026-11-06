@@ -68,3 +68,18 @@ test('check-handles: reports which handles exist on YouTube', async () => {
   const res = await worker.fetch(new Request('https://x.dev/api/check-handles?h=@good,@bad'), { ASSETS, YT_API_KEY: 'k', fetchImpl: f });
   assert.deepEqual(await res.json(), [{ handle: '@good', found: true, title: 'Good Channel', channelId: 'UC1' }, { handle: '@bad', found: false }]);
 });
+
+test('check-handles: q= searches channels by name and returns their handles', async () => {
+  const f = async (u) => {
+    u = String(u);
+    if (u.includes('/search?')) return json({ items: [{ id: { channelId: 'UCa' } }, { id: { channelId: 'UCb' } }] });
+    if (u.includes('/channels?') && u.includes('id=UCa%2CUCb')) return json({ items: [
+      { id: 'UCa', snippet: { title: 'UFC BJJ', customUrl: '@ufcbjjofficial' }, statistics: { subscriberCount: '500000' } },
+      { id: 'UCb', snippet: { title: 'Fan', customUrl: '@fan' }, statistics: { subscriberCount: '10' } }] });
+    return json({}, 404);
+  };
+  const res = await worker.fetch(new Request('https://x.dev/api/check-handles?q=UFC%20BJJ'), { ASSETS, YT_API_KEY: 'k', fetchImpl: f });
+  assert.deepEqual(await res.json(), [
+    { title: 'UFC BJJ', handle: '@ufcbjjofficial', channelId: 'UCa', subscribers: 500000 },
+    { title: 'Fan', handle: '@fan', channelId: 'UCb', subscribers: 10 }]);
+});

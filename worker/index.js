@@ -126,6 +126,17 @@ async function eventVideos(request, env) {
 async function checkHandles(request, env) {
   if (!env.YT_API_KEY) return json({ error: 'no_key' }, 503);
   const fetchImpl = env.fetchImpl ?? fetch;
+  const q = new URL(request.url).searchParams.get('q');
+  if (q) {
+    const key = encodeURIComponent(env.YT_API_KEY);
+    const sr = await fetchImpl(`${SEARCH_API}?part=snippet&type=channel&maxResults=8&q=${encodeURIComponent(q)}&key=${key}`);
+    if (!sr.ok) return json({ error: 'upstream' }, 502);
+    const ids = ((await sr.json()).items ?? []).map((it) => it.id?.channelId).filter(Boolean);
+    if (!ids.length) return json([]);
+    const cr = await fetchImpl(`${CHANNELS_API}?part=snippet,statistics&id=${encodeURIComponent(ids.join(','))}&key=${key}`);
+    const items = cr.ok ? (await cr.json()).items ?? [] : [];
+    return json(items.map((c) => ({ title: c.snippet?.title, handle: c.snippet?.customUrl, channelId: c.id, subscribers: Number(c.statistics?.subscriberCount ?? 0) })));
+  }
   const handles = (new URL(request.url).searchParams.get('h') ?? '').split(',').map((h) => h.trim()).filter(Boolean).slice(0, 15);
   const out = [];
   for (const handle of handles) {
