@@ -37,6 +37,8 @@ when they happen, who won, and whether full matches are free on YouTube. Opened 
 
 **Look:** light background (no grey), restrained color used only to aid scanning, mobile-first, installable to the home screen.
 
+**App icon (required):** an original mark that reads at 60px on the iPhone home screen. Direction: a radar sweep merged with a belt bar, using the gi blue / no-gi orange accents on a light ground. No logos, federation marks, or athlete likenesses. Chabes picks from 2–3 options before the build ships. Deliverables: a 1024px master SVG, `apple-touch-icon` 180px, PWA icons at 192/512px, and a favicon.
+
 ## 4. Spoilers
 - Podiums and match outcomes are hidden behind "Tap to reveal", per item. The reveal is remembered on the device.
 - Video titles that reveal the winner (e.g. "X SUBMITS Y", "beats", "defeats", "wins") are shown as "X vs Y".
