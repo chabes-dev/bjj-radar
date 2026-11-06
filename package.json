@@ -1,0 +1,6 @@
+{
+  "name": "bjj-radar",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test", "validate": "node scripts/validate.js" }
+}
