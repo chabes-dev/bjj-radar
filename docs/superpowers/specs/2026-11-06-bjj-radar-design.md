@@ -45,18 +45,18 @@ when they happen, who won, and whether full matches are free on YouTube. Opened 
 - "New" markers never show who won.
 
 ## 5. Architecture
-- **App:** static site (HTML/CSS/JS + PWA manifest) on Vercel, plus one serverless function. GitHub repo `bjj-radar`, auto-deployed by Vercel.
+- **App:** static site (HTML/CSS/JS + PWA manifest) served by a Cloudflare Worker with static assets; the same Worker handles `/api/refresh`. GitHub repo `bjj-radar`, auto-deployed by Cloudflare Workers Builds on each commit (free plan).
 - **Data:** JSON files in the repo under `/data` (events, athletes, teams, videos, matches). No database.
 - **Weekly Claude run (Monday 1×):** a scheduled task that, using web search:
   1. updates events (dates, status, streaming)
   2. adds results (podiums, superfights, starred-athlete paths)
   3. updates rosters and verified profile links
   4. pulls new YouTube videos and matches them, resolving the "Maybe" items
-  5. commits to the repo → Vercel redeploys.
+  5. commits to the repo → Cloudflare redeploys.
   On failure, nothing is committed and the old data stays live.
 - **Refresh button:** calls `/api/refresh`, which reads the uploads list of each whitelisted channel via the YouTube Data API. This costs about 1 quota unit per channel, against a free quota of 10k/day, so it is effectively unlimited. It returns videos newer than the last Monday run. Matching runs in the browser against the local athlete/event lists; results are cached on the device until the next deploy. **No Claude usage.**
 - **Device storage:** stars, last-visit timestamp, revealed spoilers, refresh cache.
-- **Setup required from Chabes:** one free YouTube API key (guided, about 5 minutes), stored as a Vercel environment variable.
+- **Setup required from Chabes:** one free YouTube API key (guided, about 5 minutes), stored as a Cloudflare Worker secret; plus a one-time Cloudflare dashboard step to connect the GitHub repo.
 
 ## 6. Data model (summary)
 - `events`: id, name, org, format (gi/nogi), dates, location, streaming (flo/free_youtube/other), status, bracketUrl, podiums[], superfights[]
